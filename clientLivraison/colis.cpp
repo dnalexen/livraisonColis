@@ -2,8 +2,7 @@
 
 Colis::Colis(int hauteur, int largeur,
              int longueur, QString nom,
-             QString pays, int poids,
-             QChar type)
+             QString pays, int poids)
 {
     mID = QUuid::createUuid().toString(QUuid::WithoutBraces);
     mHauteur = hauteur;
@@ -12,10 +11,14 @@ Colis::Colis(int hauteur, int largeur,
     mNom = nom;
     mPays = pays;
     mPoids = poids;
-    mType = type;
 }
 
 Colis::Colis(QByteArray)
+{
+
+}
+
+Colis::~Colis()
 {
 
 }

@@ -19,6 +19,12 @@ set(PROJECT_SOURCES
         widget.ui
         colis.h
         colis.cpp
+        colisA.h
+        colisA.cpp
+        colisB.h
+        colisB.cpp
+        colisC.h
+        colisC.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
