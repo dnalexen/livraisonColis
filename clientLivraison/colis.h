@@ -11,7 +11,7 @@
 class Colis
 {
 public:
-    Colis(int, int, int, QString, QString, int, int);
+    Colis(int, int, int, QString, QString, int, QChar);
     Colis(QByteArray);
     QByteArray toJson();
 
@@ -22,7 +22,8 @@ public:
     QString getNom() const;
     QString getPays() const;
     int getPoids() const;
-    int getType() const;
+    QChar getType() const;
+    void info();
 protected:
     QString mID;
     int mHauteur;
@@ -31,7 +32,7 @@ protected:
     QString mNom;
     QString mPays;
     int mPoids;
-    int mType;
+    QChar mType;
 };
 
 #endif // COLIS_H

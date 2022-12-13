@@ -3,7 +3,7 @@
 Colis::Colis(int hauteur, int largeur,
              int longueur, QString nom,
              QString pays, int poids,
-             int type)
+             QChar type)
 {
     mID = QUuid::createUuid().toString(QUuid::WithoutBraces);
     mHauteur = hauteur;
@@ -60,7 +60,15 @@ int Colis::getPoids() const
     return mPoids;
 }
 
-int Colis::getType() const
+QChar Colis::getType() const
 {
     return mType;
+}
+
+void Colis::info()
+{
+    qDebug() << "ID: " << getID() << "\nNom: " << getNom() << "\nPays: "
+             << getPays() << "\nType: " << getType() << "\nHauteur: "
+             << getHauteur() << "\nLargeur: " << getLargeur()
+             << "\nLongueur: " << getLongueur();
 }
