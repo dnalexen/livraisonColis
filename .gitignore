@@ -1,0 +1,7 @@
+serveurLivraison/build/
+clientLivraison/build/
+serveurLivraison/CMakeLists.txt.user
+clientLivraison/CMakeLists.txt.user
+build-clientLivraison-Desktop_Qt_6_4_1_GCC_64bit-Debug/
+build-serveurLivraison-Desktop_Qt_6_4_1_GCC_64bit-Debug/
+
