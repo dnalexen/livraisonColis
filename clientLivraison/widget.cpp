@@ -6,6 +6,8 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    setWindowTitle("client");
+    //ui->pushButtonEnvoyer->
 }
 
 Widget::~Widget()
