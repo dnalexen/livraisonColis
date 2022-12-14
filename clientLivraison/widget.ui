@@ -199,19 +199,16 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayoutColis">
        <item>
-        <widget class="QLabel" name="labelLongueur">
+        <widget class="QLabel" name="labelHauteur">
          <property name="text">
-          <string>Longueur:</string>
+          <string>Hauteur:</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEditLongueur">
+        <widget class="QLineEdit" name="lineEditHauteur">
          <property name="readOnly">
           <bool>true</bool>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -244,16 +241,19 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="labelHauteur">
+        <widget class="QLabel" name="labelLongueur">
          <property name="text">
-          <string>Hauteur:</string>
+          <string>Longueur:</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEditHauteur">
+        <widget class="QLineEdit" name="lineEditLongueur">
          <property name="readOnly">
           <bool>true</bool>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -273,6 +273,27 @@
        </item>
        <item>
         <widget class="QLineEdit" name="lineEditPoids">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelVolume">
+         <property name="text">
+          <string>Volume:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditVolume">
          <property name="readOnly">
           <bool>true</bool>
          </property>

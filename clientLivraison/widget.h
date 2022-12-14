@@ -17,5 +17,7 @@ public:
 
 private:
     Ui::Widget *ui;
+private slots:
+    void envoisColis();
 };
 #endif // WIDGET_H

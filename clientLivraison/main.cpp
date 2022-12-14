@@ -1,17 +1,19 @@
 #include "widget.h"
 
 #include <QApplication>
-#include "colis.h"
+/*#include "colis.h"
 #include "colisA.h"
 #include "colisB.h"
 #include "colisC.h"
+*/
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Widget w;
-    //w.show();
+    w.show();
 
+    /*
     ColisA monColisA(4, 3, 5, "jerome", "france", 12);
     monColisA.info();
 
@@ -20,7 +22,7 @@ int main(int argc, char *argv[])
 
     ColisC monColisC(4, 3, 5, "jerome", "france", 12);
     monColisC.info();
-
+    */
 
     return a.exec();
 }
