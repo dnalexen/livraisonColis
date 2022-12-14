@@ -1,12 +1,40 @@
 #include "widget.h"
 #include "./ui_widget.h"
 #include "colis.h"
+#include <QSettings>
+
+float hauteurPetit;
+float largeurPetit;
+float longueurPetit;
+
+float hauteurMoyen;
+float largeurMoyen;
+float longueurMoyen;
+
+float hauteurGrand;
+float largeurGrand;
+float longueurGrand;
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+
+    QSettings settings("../clientLivraison/settings.ini", QSettings::IniFormat);
+
+    hauteurPetit = settings.value("Petit/Hauteur", "settings").toFloat();
+    largeurPetit = settings.value("Petit/Largeur", "settings").toFloat();
+    longueurPetit = settings.value("Petit/Longueur", "settings").toFloat();
+
+    hauteurMoyen = settings.value("Moyen/Hauteur", "settings").toFloat();
+    largeurMoyen = settings.value("Moyen/Largeur", "settings").toFloat();
+    longueurMoyen = settings.value("Moyen/Longueur", "settings").toFloat();
+
+    hauteurGrand = settings.value("Grand/Hauteur", "settings").toFloat();
+    largeurGrand = settings.value("Grand/Largeur", "settings").toFloat();
+    longueurGrand = settings.value("Grand/Longueur", "settings").toFloat();
+
     setWindowTitle("client");
     mSock = new QTcpSocket(this);
     mSock->connectToHost("127.0.0.1",9090);
@@ -27,17 +55,17 @@ Widget::~Widget()
 
 void Widget::envoisColis()
 {
-    float hauteurPetit = 0.5;
-    float largeurPetit = 0.7;
-    float longueurPetit = 1;
+//    float hauteurPetit = 0.5;
+//    float largeurPetit = 0.7;
+//    float longueurPetit = 1;
 
-    float hauteurMoyen = 0.7;
-    float largeurMoyen = 0.9;
-    float longueurMoyen = 1.2;
+//    float hauteurMoyen = 0.7;
+//    float largeurMoyen = 0.9;
+//    float longueurMoyen = 1.2;
 
-    float hauteurGrand = 1;
-    float largeurGrand = 1.2;
-    float longueurGrand = 1.5;
+//    float hauteurGrand = 1;
+//    float largeurGrand = 1.2;
+//    float longueurGrand = 1.5;
 
     float hauteur, largeur, longueur, volume;
     float poids;
