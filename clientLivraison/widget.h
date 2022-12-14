@@ -1,7 +1,10 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include <QRandomGenerator>
+#include <QTcpSocket>
 #include <QWidget>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -17,7 +20,10 @@ public:
 
 private:
     Ui::Widget *ui;
+    QTcpSocket* mSock;
 private slots:
     void envoisColis();
+    void Connected();
+    void Disconnected();
 };
 #endif // WIDGET_H

@@ -1,7 +1,6 @@
 #include "widget.h"
 #include "./ui_widget.h"
 #include "colis.h"
-#include <QRandomGenerator>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -9,12 +8,16 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("client");
+    mSock = new QTcpSocket(this);
+    mSock->connectToHost("127.0.0.1",9090);
 
     ui->comboBoxType->addItems(QStringList {"Petit", "Moyen", "Grand"});
 
     ui->comboBoxPays->addItems(QStringList {"Allemagne", "Espagne", "France"});
 
-    connect(ui->pushButtonEnvoyer, SIGNAL(clicked(bool)), this, SLOT(envoisColis()));    
+    connect(mSock, SIGNAL(connected()), this, SLOT(Connected()));
+    connect(mSock, SIGNAL(Disconnected()), this, SLOT(Disconnected()));
+    connect(ui->pushButtonEnvoyer, SIGNAL(clicked(bool)), this, SLOT(envoisColis()));
 }
 
 Widget::~Widget()
@@ -58,7 +61,7 @@ void Widget::envoisColis()
         longueur = longueurGrand;
     }
     volume = hauteur * largeur * longueur;
-    poids = (double)(QRandomGenerator::global()->bounded(1, 500))/10;
+    poids = (float)(QRandomGenerator::global()->bounded(1, 500))/10;
 
     ui->lineEditHauteur->setText(QString::number(hauteur));
     ui->lineEditLargeur->setText(QString::number(largeur));
@@ -69,5 +72,17 @@ void Widget::envoisColis()
     Colis monColis(hauteur, largeur, longueur, nom, pays, poids, type);
     monColis.info();
     qDebug() << monColis.toJson();
+}
+
+void Widget::Connected()
+{
+    ui->pushButtonEnvoyer->setEnabled(true);
+    qDebug() << "connecté";
+}
+
+void Widget::Disconnected()
+{
+    ui->pushButtonEnvoyer->setEnabled(false);
+    qDebug() << "déconnecté";
 }
 

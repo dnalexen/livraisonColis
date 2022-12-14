@@ -2,7 +2,7 @@
 
 Colis::Colis(int hauteur, int largeur,
              int longueur, QString nom,
-             QString pays, int poids,
+             QString pays, float poids,
              QString type)
 {
     mID = QUuid::createUuid().toString(QUuid::WithoutBraces);
@@ -36,7 +36,7 @@ QByteArray Colis::toJson()
     colisObject["hauteur"] = mHauteur;
     colisObject["largeur"] = mLargeur;
     colisObject["longueur"] =  mLongueur;
-    colisObject["poids"] = mPoids;
+    colisObject["poids"] = QString::number(mPoids, 'f', 1);
 
     QJsonDocument colisDocument(colisObject);
 
@@ -75,7 +75,7 @@ QString Colis::getPays() const
     return mPays;
 }
 
-int Colis::getPoids() const
+float Colis::getPoids() const
 {
     return mPoids;
 }
