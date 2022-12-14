@@ -8,6 +8,9 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 
+/**
+ * @brief The Colis class
+ */
 class Colis
 {
 public:
@@ -29,6 +32,10 @@ public:
 
     QByteArray toJson();    
     QString toString();
+
+    float operator%(const Colis)const;
+    float operator$(const Colis)const;
+
 protected:
     QString mID;
     float mHauteur;

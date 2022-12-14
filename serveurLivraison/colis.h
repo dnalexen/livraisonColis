@@ -8,6 +8,9 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 
+/**
+ * @brief The Colis class
+ */
 class Colis
 {
 public:

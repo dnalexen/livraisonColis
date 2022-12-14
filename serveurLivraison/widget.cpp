@@ -2,6 +2,10 @@
 #include "./ui_widget.h"
 #include "colis.h"
 
+/**
+ * @brief Widget::Widget
+ * @param parent
+ */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -18,6 +22,9 @@ Widget::Widget(QWidget *parent)
     mServer->listen(QHostAddress::Any,9090);
 }
 
+/**
+ * @brief Widget::~Widget
+ */
 Widget::~Widget()
 {
     delete mServer;
@@ -27,6 +34,9 @@ Widget::~Widget()
         delete mListCamions[i];
 }
 
+/**
+ * @brief Widget::clientConnected
+ */
 void Widget::clientConnected()
 {
     QTcpSocket* sockClient = mServer->nextPendingConnection();
@@ -35,6 +45,9 @@ void Widget::clientConnected()
     connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));
 }
 
+/**
+ * @brief Widget::clientDisconnected
+ */
 void Widget::clientDisconnected()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
@@ -42,6 +55,9 @@ void Widget::clientDisconnected()
     sock->deleteLater();
 }
 
+/**
+ * @brief Widget::dataIsComing
+ */
 void Widget::dataIsComing()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
@@ -115,6 +131,10 @@ void Widget::dataIsComing()
 //    }
 }
 
+/**
+ * @brief Widget::envoiCamion
+ * @param ptrCamion
+ */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
     if(!QDir("bordereauxTransport").exists())
@@ -143,6 +163,13 @@ void Widget::envoiCamion(Camion* ptrCamion)
     delete ptrCamion;
 }
 
+/**
+ * @brief Widget::miseAJourFenetre
+ * @param pays
+ * @param poids
+ * @param volume
+ * @param c
+ */
 void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
 {
     if(pays=="Allemagne")

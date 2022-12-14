@@ -6,6 +6,9 @@
 #include <QList>
 #include "colis.h"
 
+/**
+ * @brief The Camion class
+ */
 class Camion
 {
 public:

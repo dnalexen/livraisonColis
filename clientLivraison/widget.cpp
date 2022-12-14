@@ -15,6 +15,10 @@ float hauteurGrand;
 float largeurGrand;
 float longueurGrand;
 
+/**
+ * @brief Widget::Widget
+ * @param parent
+ */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -48,12 +52,18 @@ Widget::Widget(QWidget *parent)
     connect(ui->pushButtonEnvoyer, SIGNAL(clicked(bool)), this, SLOT(envoisColis()));
 }
 
+/**
+ * @brief Widget::~Widget
+ */
 Widget::~Widget()
 {
     delete mSock;
     delete ui;
 }
 
+/**
+ * @brief Widget::envoisColis
+ */
 void Widget::envoisColis()
 {
 //    float hauteurPetit = 0.5;
@@ -103,11 +113,17 @@ void Widget::envoisColis()
     mSock->write(monColis.toJson());
 }
 
+/**
+ * @brief Widget::Connected
+ */
 void Widget::Connected()
 {
     ui->pushButtonEnvoyer->setEnabled(true);
 }
 
+/**
+ * @brief Widget::Disconnected
+ */
 void Widget::Disconnected()
 {
     ui->pushButtonEnvoyer->setEnabled(false);    

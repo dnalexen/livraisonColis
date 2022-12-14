@@ -1,5 +1,14 @@
 #include "colis.h"
-
+/**
+ * @brief Colis::Colis
+ * @param hauteur
+ * @param largeur
+ * @param longueur
+ * @param nom
+ * @param pays
+ * @param poids
+ * @param type
+ */
 Colis::Colis(float hauteur, float largeur,
              float longueur, QString nom,
              QString pays, float poids,
@@ -15,6 +24,10 @@ Colis::Colis(float hauteur, float largeur,
     mType = type;
 }
 
+/**
+ * @brief Colis::Colis
+ * @param colisByteArray
+ */
 Colis::Colis(QByteArray& colisByteArray)
 {
     QJsonObject colisObject = QJsonDocument::fromJson(colisByteArray).object();
@@ -28,11 +41,18 @@ Colis::Colis(QByteArray& colisByteArray)
     mType = colisObject["type"].toString();
 }
 
+/**
+ * @brief Colis::~Colis
+ */
 Colis::~Colis()
 {
 
 }
 
+/**
+ * @brief Colis::toJson
+ * @return
+ */
 QByteArray Colis::toJson()
 {
     QJsonObject colisObject;
@@ -53,46 +73,82 @@ QByteArray Colis::toJson()
     return colisByteArray;
 }
 
+/**
+ * @brief Colis::getID
+ * @return
+ */
 QString Colis::getID() const
 {
     return mID;
 }
 
+/**
+ * @brief Colis::getHauteur
+ * @return
+ */
 float Colis::getHauteur() const
 {
     return mHauteur;
 }
 
+/**
+ * @brief Colis::getLargeur
+ * @return
+ */
 float Colis::getLargeur() const
 {
     return mLargeur;
 }
 
+/**
+ * @brief Colis::getLongueur
+ * @return
+ */
 float Colis::getLongueur() const
 {
     return mLongueur;
 }
 
+/**
+ * @brief Colis::getNom
+ * @return
+ */
 QString Colis::getNom() const
 {
     return mNom;
 }
 
+/**
+ * @brief Colis::getPays
+ * @return
+ */
 QString Colis::getPays() const
 {
     return mPays;
 }
 
+/**
+ * @brief Colis::getPoids
+ * @return
+ */
 float Colis::getPoids() const
 {
     return mPoids;
 }
 
+/**
+ * @brief Colis::getType
+ * @return
+ */
 QString Colis::getType() const
 {
     return mType;
 }
 
+/**
+ * @brief Colis::toString
+ * @return
+ */
 QString Colis::toString()
 {
     QString line;
@@ -106,4 +162,24 @@ QString Colis::toString()
     line += "Poids:" + QString::number(getPoids());
 
     return line;
+}
+
+/**
+ * @brief Colis::operator %
+ * @param c
+ * @return
+ */
+float Colis::operator%(const Colis c) const
+{
+    return mPoids + c.mPoids;
+}
+
+/**
+ * @brief Colis::operator$
+ * @param c
+ * @return
+ */
+float Colis::operator$(const Colis c) const
+{
+    return mHauteur*mLargeur*mLongueur + c.mHauteur*c.mLargeur*c.mLongueur;
 }
