@@ -36,5 +36,6 @@ void Widget::dataIsComing()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
     QByteArray data = sock->readAll();
+    qDebug() << data;
 }
 

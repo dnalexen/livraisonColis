@@ -70,8 +70,8 @@ void Widget::envoisColis()
     ui->lineEditVolume->setText(QString::number(volume));
 
     Colis monColis(hauteur, largeur, longueur, nom, pays, poids, type);
-    monColis.info();
-    qDebug() << monColis.toJson();
+
+    mSock->write(monColis.toJson());
 }
 
 void Widget::Connected()
