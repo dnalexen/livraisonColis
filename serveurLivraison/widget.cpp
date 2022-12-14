@@ -9,6 +9,10 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("serveur");
 
+    ui->pushButtonAllemagne->setVisible(false);
+    ui->pushButtonEspagne->setVisible(false);
+    ui->pushButtonFrance->setVisible(false);
+
     mServer = new QTcpServer(this);
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
@@ -40,7 +44,7 @@ void Widget::dataIsComing()
     QByteArray data = sock->readAll();
     Colis c(data);
 
-    qDebug() << c.toString();
+    //qDebug() << c.toString();
 
     QStringList destinationsCamionsList;
     bool colisAjoute=false;
@@ -51,39 +55,88 @@ void Widget::dataIsComing()
     if(!destinationsCamionsList.contains(c.getPays()))
     {
         Camion* camion = new Camion(c.getPays(), 1000, 40000);
-        camion->addColis(c);
-        mListCamions.append(camion);
-        miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
+        colisAjoute = camion->addColis(c);
+        if(colisAjoute)
+            miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
+        mListCamions.append(camion);        
     }else{
         for(int i=0; i<mListCamions.size(); i++)
         {
             if(mListCamions[i]->getPays() == c.getPays())
             {
                 colisAjoute = mListCamions[i]->addColis(c);
-                miseAJourFenetre(mListCamions[i]->getPays(), mListCamions[i]->getPoids(), mListCamions[i]->getVolume(), c);
+                if(colisAjoute)
+                    miseAJourFenetre(mListCamions[i]->getPays(), mListCamions[i]->getPoids(), mListCamions[i]->getVolume(), c);
                 if(!colisAjoute)
                 {
-                    qDebug() << "camion plein gerer le bordereau du camion";
                     envoiCamion(mListCamions[i]);
+                    if(mListCamions[i]->getPays() == "Allemagne")
+                    {
+                        ui->tableWidgetAllemagne->clear();
+                        ui->lineEditPoidsCamionAllemagne->setText("0");
+                        ui->lineEditVolumeCamionAllemagne->setText("0");
+                        ui->tableWidgetAllemagne->setRowCount(0);
+                    } else if(mListCamions[i]->getPays() == "Espagne")
+                    {
+                        ui->tableWidgetEspagne->clear();
+                        ui->lineEditPoidsCamionEspagne->setText("0");
+                        ui->lineEditVolumeCamionEspagne->setText("0");
+                        ui->tableWidgetEspagne->setRowCount(0);
+                    } else {
+                        ui->tableWidgetFrance->clear();
+                        ui->lineEditPoidsCamionFrance->setText("0");
+                        ui->lineEditVolumeCamionFrance->setText("0");
+                        ui->tableWidgetFrance->setRowCount(0);
+                    }
+
+                    mListCamions.removeAt(i);
+
+                    Camion* camion = new Camion(c.getPays(), 1000, 40000);
+                    colisAjoute = camion->addColis(c);
+                    if(colisAjoute)
+                        miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
+                    mListCamions.append(camion);
                 }
             }
         }
     }
 
-    qDebug() << "Nombre de camions:" << mListCamions.size();
+    //qDebug() << "Nombre de camions:" << mListCamions.size();
 
-    qDebug() << "----------";
-
-    for(int i=0; i<mListCamions.size(); i++)
-    {
-        qDebug() << "-------------";
-        qDebug() << mListCamions[i]->toString();
-    }
+//    for(int i=0; i<mListCamions.size(); i++)
+//    {
+//        qDebug() << "-------------";
+//        qDebug() << mListCamions[i]->toString();
+//        envoiCamion(mListCamions[i]);
+//    }
 }
 
 void Widget::envoiCamion(Camion* ptrCamion)
 {
+    if(!QDir("bordereauxTransport").exists())
+        QDir().mkdir("bordereauxTransport");
 
+    QString filename = "bordereauxTransport/" + ptrCamion->getID();
+    QFile file(filename);
+
+    if(!file.open(QFile::WriteOnly |
+                      QFile::Text))
+    {
+        qDebug() << "Impossible d'ouvrir le fichier pour écriture";
+        return;
+    }
+
+    QTextStream out(&file);
+    out << "Bordereau de transport\n\n";
+    out << "Information Camion:\n";
+    out << ptrCamion->toString();
+    out << "\n\nInformation Colis:\n";
+    for(auto colis : ptrCamion->getColisList())
+        out << colis.toString() + "\n";
+    file.flush();
+    file.close();
+
+    delete ptrCamion;
 }
 
 void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)

@@ -4,7 +4,12 @@
 #include <QWidget>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QFile>
+#include <QDir>
+#include <QTextStream>
 #include "camion.h"
+
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }

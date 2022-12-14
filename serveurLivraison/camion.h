@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QUuid>
-#include <QMap>
+#include <QList>
 #include "colis.h"
 
 class Camion
@@ -12,7 +12,7 @@ public:
     Camion(QString, float, float);
 
     QString getID() const;
-    QMap<QString, Colis> getColisMap() const;
+    QList<Colis> getColisList() const;
     QString getPays() const;
     float getPoids() const;
     float getPoidsMax() const;
@@ -24,7 +24,7 @@ public:
 
 protected:
     QString mID;
-    QMap<QString, Colis> mColisMap;
+    QList<Colis> mColisList;
     QString mPays;
     float mPoids;
     float mPoidsMax;

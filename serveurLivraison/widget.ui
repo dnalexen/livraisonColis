@@ -134,7 +134,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Envoyer</string>
+            <string>Depart</string>
            </property>
           </widget>
          </item>
@@ -710,7 +710,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Envoyer</string>
+            <string>Depart</string>
            </property>
           </widget>
          </item>
@@ -1286,7 +1286,7 @@
             </size>
            </property>
            <property name="text">
-            <string>Envoyer</string>
+            <string>Depart</string>
            </property>
           </widget>
          </item>

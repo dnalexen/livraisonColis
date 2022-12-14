@@ -15,9 +15,9 @@ QString Camion::getID() const
     return mID;
 }
 
-QMap<QString, Colis> Camion::getColisMap() const
+QList<Colis> Camion::getColisList() const
 {
-    return mColisMap;
+    return mColisList;
 }
 
 QString Camion::getPays() const
@@ -49,8 +49,8 @@ bool Camion::addColis(Colis& c)
 {
     float volumeColis = c.getHauteur() * c.getLargeur() * c.getLongueur();
 
-    qDebug() << "Poids: " << mPoids;
-    qDebug() << "Volume: " << mVolume;
+    //qDebug() << "Poids: " << mPoids;
+    //qDebug() << "Volume: " << mVolume;
 
     if(
         ((mPoids + c.getPoids()) < mPoidsMax)
@@ -58,13 +58,13 @@ bool Camion::addColis(Colis& c)
         ((mVolume + volumeColis) < mVolumeMax)
        )
     {
-       qDebug() << "in";
-       mColisMap.insert(c.getID(), c);
+       //qDebug() << "in";
+       mColisList.append(c);
        mVolume += volumeColis;
        mPoids += c.getPoids();
 
-       qDebug() << "Poids: " << mPoids;
-       qDebug() << "Volume: " << mVolume;
+       //qDebug() << "Poids: " << mPoids;
+       //qDebug() << "Volume: " << mVolume;
 
        return true;
     }
@@ -81,7 +81,7 @@ QString Camion::toString()
     line += "Poids max:" + QString::number(getPoidsMax()) + ";";
     line += "Volume:" + QString::number(getVolume()) + ";";
     line += "Volume max:" + QString::number(getVolumeMax()) + ";";
-    line += "Nombre de colis:" + QString::number(mColisMap.size());
+    line += "Nombre de colis:" + QString::number(mColisList.size());
 
     return line;
 }
