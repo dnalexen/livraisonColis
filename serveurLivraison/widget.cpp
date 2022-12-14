@@ -20,7 +20,11 @@ Widget::Widget(QWidget *parent)
 
 Widget::~Widget()
 {
+    delete mServer;
     delete ui;
+
+    for(int i=0; i<mListCamions.size(); i++)
+        delete mListCamions[i];
 }
 
 void Widget::clientConnected()

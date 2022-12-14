@@ -50,6 +50,7 @@ Widget::Widget(QWidget *parent)
 
 Widget::~Widget()
 {
+    delete mSock;
     delete ui;
 }
 
@@ -105,12 +106,10 @@ void Widget::envoisColis()
 void Widget::Connected()
 {
     ui->pushButtonEnvoyer->setEnabled(true);
-    qDebug() << "connecté";
 }
 
 void Widget::Disconnected()
 {
-    ui->pushButtonEnvoyer->setEnabled(false);
-    qDebug() << "déconnecté";
+    ui->pushButtonEnvoyer->setEnabled(false);    
 }
 
