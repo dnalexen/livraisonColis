@@ -1,6 +1,6 @@
 #include "camion.h"
 
-Camion::Camion(QString ID, QString pays, int poidsMax, int volumeMax)
+Camion::Camion(QString pays, float poidsMax, float volumeMax)
 {
     mID = QUuid::createUuid().toString(QUuid::WithoutBraces);
     mPays = pays;
@@ -30,35 +30,58 @@ float Camion::getPoids() const
     return mPoids;
 }
 
-int Camion::getPoidsMax() const
+float Camion::getPoidsMax() const
 {
     return mPoidsMax;
 }
 
-int Camion::getVolume() const
+float Camion::getVolume() const
 {
     return mVolume;
 }
 
-int Camion::getVolumeMax() const
+float Camion::getVolumeMax() const
 {
     return mVolumeMax;
 }
 
-bool Camion::addColis(Colis c)
+bool Camion::addColis(Colis& c)
 {
-    int volumeColis = c.getHauteur() * c.getLargeur() * c.getLongueur();
+    float volumeColis = c.getHauteur() * c.getLargeur() * c.getLongueur();
 
-    if(mPoids + c.getPoids() < mPoidsMax
+    qDebug() << "Poids: " << mPoids;
+    qDebug() << "Volume: " << mVolume;
+
+    if(
+        ((mPoids + c.getPoids()) < mPoidsMax)
             &&
-       mVolume + volumeColis < mVolumeMax)
+        ((mVolume + volumeColis) < mVolumeMax)
+       )
     {
+       qDebug() << "in";
        mColisMap.insert(c.getID(), c);
        mVolume += volumeColis;
        mPoids += c.getPoids();
+
+       qDebug() << "Poids: " << mPoids;
+       qDebug() << "Volume: " << mVolume;
 
        return true;
     }
 
     return false;
+}
+
+QString Camion::toString()
+{
+    QString line;
+    line += "ID:" + getID() + ";";
+    line += "Pays:" + getPays() + ";";
+    line += "Poids:" + QString::number(getPoids()) + ";";
+    line += "Poids max:" + QString::number(getPoidsMax()) + ";";
+    line += "Volume:" + QString::number(getVolume()) + ";";
+    line += "Volume max:" + QString::number(getVolumeMax()) + ";";
+    line += "Nombre de colis:" + QString::number(mColisMap.size());
+
+    return line;
 }

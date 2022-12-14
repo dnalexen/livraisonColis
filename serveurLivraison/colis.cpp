@@ -1,7 +1,7 @@
 #include "colis.h"
 
-Colis::Colis(int hauteur, int largeur,
-             int longueur, QString nom,
+Colis::Colis(float hauteur, float largeur,
+             float longueur, QString nom,
              QString pays, float poids,
              QString type)
 {
@@ -15,9 +15,17 @@ Colis::Colis(int hauteur, int largeur,
     mType = type;
 }
 
-Colis::Colis(QByteArray)
+Colis::Colis(QByteArray& colisByteArray)
 {
-
+    QJsonObject colisObject = QJsonDocument::fromJson(colisByteArray).object();
+    mID = colisObject["ID"].toString();
+    mHauteur = colisObject["hauteur"].toString().toFloat();
+    mLargeur = colisObject["largeur"].toString().toFloat();
+    mLongueur = colisObject["longueur"].toString().toFloat();
+    mNom = colisObject["nom"].toString();
+    mPays = colisObject["pays"].toString();
+    mPoids = colisObject["poids"].toString().toFloat();
+    mType = colisObject["type"].toString();
 }
 
 Colis::~Colis()
@@ -33,9 +41,9 @@ QByteArray Colis::toJson()
     colisObject["nom"] = mNom;
     colisObject["pays"] = mPays;
     colisObject["type"] = mType;
-    colisObject["hauteur"] = mHauteur;
-    colisObject["largeur"] = mLargeur;
-    colisObject["longueur"] =  mLongueur;
+    colisObject["hauteur"] = QString::number(mHauteur, 'f', 1);
+    colisObject["largeur"] = QString::number(mLargeur, 'f', 1);
+    colisObject["longueur"] =  QString::number(mLongueur, 'f', 1);
     colisObject["poids"] = QString::number(mPoids, 'f', 1);
 
     QJsonDocument colisDocument(colisObject);
@@ -50,17 +58,17 @@ QString Colis::getID() const
     return mID;
 }
 
-int Colis::getHauteur() const
+float Colis::getHauteur() const
 {
     return mHauteur;
 }
 
-int Colis::getLargeur() const
+float Colis::getLargeur() const
 {
     return mLargeur;
 }
 
-int Colis::getLongueur() const
+float Colis::getLongueur() const
 {
     return mLongueur;
 }
@@ -85,10 +93,17 @@ QString Colis::getType() const
     return mType;
 }
 
-void Colis::info()
+QString Colis::toString()
 {
-    qDebug() << "ID: " << getID() << "\nNom: " << getNom() << "\nPays: "
-             << getPays() << "\nType: " << getType() << "\nHauteur: "
-             << getHauteur() << "\nLargeur: " << getLargeur()
-             << "\nLongueur: " << getLongueur();
+    QString line;
+    line += "ID:" + getID() + ";";
+    line += "Nom:" + getNom() + ";";
+    line += "Pays:" + getPays() + ";";
+    line += "Type:" + getType() + ";";
+    line += "Hauteur:" + QString::number(getHauteur()) + ";";
+    line += "Largeur:" + QString::number(getLargeur()) + ";";
+    line += "Longueur:" + QString::number(getLongueur()) + ";";
+    line += "Poids:" + QString::number(getPoids());
+
+    return line;
 }

@@ -9,26 +9,27 @@
 class Camion
 {
 public:
-    Camion(QString, QString, int, int);
+    Camion(QString, float, float);
 
     QString getID() const;
     QMap<QString, Colis> getColisMap() const;
     QString getPays() const;
     float getPoids() const;
-    int getPoidsMax() const;
-    int getVolume() const;
-    int getVolumeMax() const;
+    float getPoidsMax() const;
+    float getVolume() const;
+    float getVolumeMax() const;
 
-    bool addColis(Colis);
+    bool addColis(Colis&);
+    QString toString();
 
 protected:
     QString mID;
     QMap<QString, Colis> mColisMap;
     QString mPays;
     float mPoids;
-    int mPoidsMax;
-    int mVolume;
-    int mVolumeMax;
+    float mPoidsMax;
+    float mVolume;
+    float mVolumeMax;
 };
 
 #endif // CAMION_H

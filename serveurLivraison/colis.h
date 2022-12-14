@@ -11,26 +11,29 @@
 class Colis
 {
 public:
-    Colis(int, int, int, QString, QString, float, QString);
-    Colis(QByteArray);
+    Colis(float hauteur=0, float largeur=0,
+          float longueur=0, QString nom=0,
+          QString pays="", float poids=0,
+          QString type="A");
+    Colis(QByteArray&);
     ~Colis();
 
     QString getID() const;
-    int getHauteur() const;
-    int getLargeur() const;
-    int getLongueur() const;
+    float getHauteur() const;
+    float getLargeur() const;
+    float getLongueur() const;
     QString getNom() const;
     QString getPays() const;
     float getPoids() const;
     QString getType() const;
 
     QByteArray toJson();    
-    void info();
+    QString toString();
 protected:
     QString mID;
-    int mHauteur;
-    int mLargeur;
-    int mLongueur;
+    float mHauteur;
+    float mLargeur;
+    float mLongueur;
     QString mNom;
     QString mPays;
     float mPoids;

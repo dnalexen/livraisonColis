@@ -27,20 +27,20 @@ Widget::~Widget()
 
 void Widget::envoisColis()
 {
-    int hauteurPetit = 20;
-    int largeurPetit = 30;
-    int longueurPetit = 40;
+    float hauteurPetit = 0.5;
+    float largeurPetit = 0.7;
+    float longueurPetit = 1;
 
-    int hauteurMoyen = 25;
-    int largeurMoyen = 35;
-    int longueurMoyen = 45;
+    float hauteurMoyen = 0.7;
+    float largeurMoyen = 0.9;
+    float longueurMoyen = 1.2;
 
-    int hauteurGrand = 30;
-    int largeurGrand = 40;
-    int longueurGrand = 50;
+    float hauteurGrand = 1;
+    float largeurGrand = 1.2;
+    float longueurGrand = 1.5;
 
-    int hauteur, largeur, longueur, volume;
-    double poids;
+    float hauteur, largeur, longueur, volume;
+    float poids;
 
     QString nom = ui->lineEditNom->text();
     QString pays = ui->comboBoxPays->currentText();

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include "camion.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -21,9 +22,12 @@ private slots:
     void clientConnected();
     void clientDisconnected();
     void dataIsComing();
+    void envoiCamion(Camion*);
+    void miseAJourFenetre(QString, float, float, Colis);
 private:
     Ui::Widget *ui;
     QTcpServer* mServer;
     QList<QTcpSocket*> mClients;
+    QList<Camion*> mListCamions;
 };
 #endif // WIDGET_H
