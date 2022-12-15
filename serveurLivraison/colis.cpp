@@ -8,13 +8,11 @@
  * @param longueur: longeur du colis
  * @param nom: nom du destinataire
  * @param pays: pays de destination
- * @param poids: poids du colis
  * @param type: type d'emballage du colis
  */
 Colis::Colis(float hauteur, float largeur,
              float longueur, QString nom,
-             QString pays, float poids,
-             QString type)
+             QString pays, QString type)
 {
     mID = QUuid::createUuid().toString(QUuid::WithoutBraces);
     mHauteur = hauteur;
@@ -22,7 +20,7 @@ Colis::Colis(float hauteur, float largeur,
     mLongueur = longueur;
     mNom = nom;
     mPays = pays;
-    mPoids = poids;
+    mPoids = (float)(QRandomGenerator::global()->bounded(1, 500))/10;
     mType = type;
 }
 

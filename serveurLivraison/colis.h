@@ -7,6 +7,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QRandomGenerator>
 
 /**
  * @brief La classe Colis
@@ -16,8 +17,7 @@ class Colis
 public:
     Colis(float hauteur=0, float largeur=0,
           float longueur=0, QString nom=0,
-          QString pays="", float poids=0,
-          QString type="A");
+          QString pays="", QString type="A");
     Colis(QByteArray&);
     ~Colis();
 
@@ -30,7 +30,7 @@ public:
     float getPoids() const;
     QString getType() const;
 
-    QByteArray toJson();    
+    QByteArray toJson();
     QString toString();
 
     float operator%(const Colis)const;

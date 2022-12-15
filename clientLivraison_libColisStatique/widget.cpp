@@ -89,16 +89,17 @@ void Widget::envoisColis()
         largeur = largeurGrand;
         longueur = longueurGrand;
     }
-    volume = hauteur * largeur * longueur;
-    poids = (float)(QRandomGenerator::global()->bounded(1, 500))/10;
+    volume = hauteur * largeur * longueur;    
+
+    Colis monColis(hauteur, largeur, longueur, nom, pays, type);
+
+    poids = monColis.getPoids();
 
     ui->lineEditHauteur->setText(QString::number(hauteur));
     ui->lineEditLargeur->setText(QString::number(largeur));
     ui->lineEditLongueur->setText(QString::number(longueur));
     ui->lineEditPoids->setText(QString::number(poids, 'f', 1));
-    ui->lineEditVolume->setText(QString::number(volume));
-
-    Colis monColis(hauteur, largeur, longueur, nom, pays, poids, type);
+    ui->lineEditVolume->setText(QString::number(volume));    
 
     mSock->write(monColis.toJson());
 }
