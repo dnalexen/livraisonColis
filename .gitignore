@@ -4,4 +4,7 @@ serveurLivraison/CMakeLists.txt.user
 clientLivraison/CMakeLists.txt.user
 build-clientLivraison-Desktop_Qt_6_4_1_GCC_64bit-Debug/
 build-serveurLivraison-Desktop_Qt_6_4_1_GCC_64bit-Debug/
+build-clientLivraison_libColisStatique-Desktop_Qt_6_4_1_GCC_64bit-Debug/
+build-serveurLivraison_libColisStatique-Desktop_Qt_6_4_1_GCC_64bit-Debug/
+build-ColisStatique-Desktop_Qt_6_4_1_GCC_64bit-Debug/
 !clientLivraison/settings.ini
