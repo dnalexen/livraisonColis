@@ -1,6 +1,5 @@
 #include "widget.h"
 #include "./ui_widget.h"
-#include "colis.h"
 
 #define POIDS_MAX 500
 #define VOLUME_MAX 40000
@@ -23,6 +22,9 @@ Widget::Widget(QWidget *parent)
     mServer = new QTcpServer(this);
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
+
+    mDB->createTable("tableColis");
+    mDB->createTable("tableCamion");
 }
 
 /**
@@ -35,6 +37,8 @@ Widget::~Widget()
 
     for(int i=0; i<mListCamions.size(); i++)
         delete mListCamions[i];
+
+    delete mDB;
 }
 
 /**
@@ -47,7 +51,7 @@ void Widget::clientConnected()
     QTcpSocket* sockClient = mServer->nextPendingConnection();
     mClients << sockClient;
     connect(sockClient,SIGNAL(readyRead()),this,SLOT(dataIsComing()));
-    connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));
+    connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));    
 }
 
 /**
@@ -83,11 +87,17 @@ void Widget::dataIsComing()
 
     if(!destinationsCamionsList.contains(c.getPays()))
     {
-        Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
-        colisAjoute = camion->addColis(c);
+        Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
+        mDB->addCamion(ptrCamion);
+        colisAjoute = ptrCamion->addColis(c);
         if(colisAjoute)
-            miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
-        mListCamions.append(camion);        
+        {
+            mDB->addColis(&c, ptrCamion->getID());
+            mDB->updatePoidsCamion(ptrCamion->getID(), ptrCamion->getPoids());
+            mDB->updateVolumeCamion(ptrCamion->getID(), ptrCamion->getVolume());
+            miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
+        }
+        mListCamions.append(ptrCamion);
     }else{
         for(int i=0; i<mListCamions.size(); i++)
         {
@@ -95,7 +105,12 @@ void Widget::dataIsComing()
             {
                 colisAjoute = mListCamions[i]->addColis(c);
                 if(colisAjoute)
+                {
+                    mDB->addColis(&c, mListCamions[i]->getID());
+                    mDB->updatePoidsCamion(mListCamions[i]->getID(), mListCamions[i]->getPoids());
+                    mDB->updateVolumeCamion(mListCamions[i]->getID(), mListCamions[i]->getVolume());
                     miseAJourFenetre(mListCamions[i]->getPays(), mListCamions[i]->getPoids(), mListCamions[i]->getVolume(), c);
+                }
                 if(!colisAjoute)
                 {
                     envoiCamion(mListCamions[i]);
@@ -118,11 +133,16 @@ void Widget::dataIsComing()
                         ui->tableWidgetFrance->setRowCount(0);
                     }
                     mListCamions.removeAt(i);
-                    Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
-                    colisAjoute = camion->addColis(c);
+                    Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
+                    colisAjoute = ptrCamion->addColis(c);
                     if(colisAjoute)
-                        miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
-                    mListCamions.append(camion);
+                    {
+                        mDB->addColis(&c, mListCamions[i]->getID());
+                        mDB->updatePoidsCamion(mListCamions[i]->getID(), mListCamions[i]->getPoids());
+                        mDB->updateVolumeCamion(mListCamions[i]->getID(), mListCamions[i]->getVolume());
+                        miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
+                    }
+                    mListCamions.append(ptrCamion);
                 }
                 break;
             }

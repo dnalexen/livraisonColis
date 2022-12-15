@@ -10,6 +10,8 @@
 #include <QPdfWriter>
 #include <QPainter>
 #include "camion.h"
+#include "colis.h"
+#include "dbmanager.h"
 
 using namespace std;
 
@@ -39,5 +41,6 @@ private:
     QTcpServer* mServer;
     QList<QTcpSocket*> mClients;
     QList<Camion*> mListCamions;
+    DbManager* mDB = new DbManager("Livraison.db");
 };
 #endif // WIDGET_H

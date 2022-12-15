@@ -17,7 +17,7 @@ class Colis
 public:
     Colis(float hauteur=0, float largeur=0,
           float longueur=0, QString nom=0,
-          QString pays="", QString type="A");
+          QString pays="", QString type="Petit");
     Colis(QByteArray&);
     ~Colis();
 
