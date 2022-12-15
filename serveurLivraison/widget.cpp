@@ -148,12 +148,16 @@ void Widget::envoiCamion(Camion* ptrCamion)
     out << "Information du camion:\n";
     out << ptrCamion->toString();
     out << "\n\nInformation des colis:\n";
+    int i = 1;
     for(auto colis : ptrCamion->getColisList())
-        out << colis.toString() + "\n";
+    {
+        out << QString::number(i) + "- " + colis.toString() + "\n";
+        i++;
+    }
     file.flush();
     file.close();
 
-    //Génération du bordereaux de transport en format PDF
+    //Génération du bordereau de transport en format PDF
     QPdfWriter pdf(filename + ".pdf");
     QPainter painter(&pdf);
 
@@ -210,10 +214,14 @@ void Widget::envoiCamion(Camion* ptrCamion)
 
     font.setPixelSize(150);
     painter.setFont(font);
+    i=1;
+    QString line;
     for(auto colis : ptrCamion->getColisList())
     {
         y +=250;
-        painter.drawText(100, y, colis.toString());
+        line = QString::number(i) + "- " + colis.toString();
+        painter.drawText(100, y, line);
+        i++;
     }
 
     painter.end();
