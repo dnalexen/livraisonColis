@@ -2,6 +2,9 @@
 #include "./ui_widget.h"
 #include "ColisStatique.h"
 
+#define POIDS_MAX 500
+#define VOLUME_MAX 40000
+
 /**
  * @brief Widget::Widget
  * @param parent
@@ -74,7 +77,7 @@ void Widget::dataIsComing()
 
     if(!destinationsCamionsList.contains(c.getPays()))
     {
-        Camion* camion = new Camion(c.getPays(), 1000, 40000);
+        Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
         colisAjoute = camion->addColis(c);
         if(colisAjoute)
             miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
@@ -109,7 +112,7 @@ void Widget::dataIsComing()
                         ui->tableWidgetFrance->setRowCount(0);
                     }
                     mListCamions.removeAt(i);
-                    Camion* camion = new Camion(c.getPays(), 1000, 40000);
+                    Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
                     colisAjoute = camion->addColis(c);
                     if(colisAjoute)
                         miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
@@ -120,14 +123,6 @@ void Widget::dataIsComing()
         }
     }
 
-    //qDebug() << "Nombre de camions:" << mListCamions.size();
-
-//    for(int i=0; i<mListCamions.size(); i++)
-//    {
-//        qDebug() << "-------------";
-//        qDebug() << mListCamions[i]->toString();
-//        envoiCamion(mListCamions[i]);
-//    }
 }
 
 /**
@@ -140,7 +135,7 @@ void Widget::envoiCamion(Camion* ptrCamion)
         QDir().mkdir("bordereauxTransport");
 
     QString filename = "bordereauxTransport/" + ptrCamion->getID();
-    QFile file(filename);
+    QFile file(filename + ".txt");
 
     if(!file.open(QFile::WriteOnly |
                       QFile::Text))
@@ -151,13 +146,78 @@ void Widget::envoiCamion(Camion* ptrCamion)
 
     QTextStream out(&file);
     out << "Bordereau de transport\n\n";
-    out << "Information Camion:\n";
+    out << "Information du camion:\n";
     out << ptrCamion->toString();
-    out << "\n\nInformation Colis:\n";
+    out << "\n\nInformation des colis:\n";
     for(auto colis : ptrCamion->getColisList())
         out << colis.toString() + "\n";
     file.flush();
     file.close();
+
+    //Génération du bordereaux de transport en format PDF
+    QPdfWriter pdf(filename + ".pdf");
+    QPainter painter(&pdf);
+
+    painter.setPen(Qt::black);
+
+    QFont font = painter.font();
+    font.setPixelSize(250);
+    painter.setFont(font);
+
+    QString cheminImage;
+    int largeurImage, hauteurImage;
+
+    if(ptrCamion->getPays() == "Allemagne")
+    {
+        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/allemagne.jpeg";
+        largeurImage = 275;
+        hauteurImage = 183;
+    }
+    else if(ptrCamion->getPays() == "Espagne")
+    {
+        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/espagne.jpeg";
+        largeurImage = 270;
+        hauteurImage = 187;
+    }
+    else if(ptrCamion->getPays() == "France")
+    {
+        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/france.jpeg";
+        largeurImage = 221;
+        hauteurImage = 228;
+    }
+
+    int y = 100;
+
+    painter.drawText(100, y, "Bordereau de transport - " + ptrCamion->getPays());
+
+    y +=300;
+    painter.drawPixmap(QRect(100, y, largeurImage*4, hauteurImage*4), QPixmap(cheminImage));
+
+    y += hauteurImage*4;
+    font.setPixelSize(200);
+    painter.setFont(font);
+    y +=400;
+    painter.drawText(100, y, "Information du camion:");
+
+    font.setPixelSize(150);
+    painter.setFont(font);
+    y +=250;
+    painter.drawText(100, y, ptrCamion->toString());
+
+    font.setPixelSize(200);
+    painter.setFont(font);
+    y +=400;
+    painter.drawText(100, y, "Information des colis:");
+
+    font.setPixelSize(150);
+    painter.setFont(font);
+    for(auto colis : ptrCamion->getColisList())
+    {
+        y +=250;
+        painter.drawText(100, y, colis.toString());
+    }
+
+    painter.end();
 
     delete ptrCamion;
 }
