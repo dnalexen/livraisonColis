@@ -1,13 +1,15 @@
 #include "ColisStatique.h"
 /**
  * @brief Colis::Colis
- * @param hauteur
- * @param largeur
- * @param longueur
- * @param nom
- * @param pays
- * @param poids
- * @param type
+ * Ce constructeur de la classe Colis
+ * permet de créer un colis.
+ * @param hauteur: hauteur du colis
+ * @param largeur: largeur du colis
+ * @param longueur: longeur du colis
+ * @param nom: nom du destinataire
+ * @param pays: pays de destination
+ * @param poids: poids du colis
+ * @param type: type d'emballage du colis
  */
 Colis::Colis(float hauteur, float largeur,
              float longueur, QString nom,
@@ -26,6 +28,10 @@ Colis::Colis(float hauteur, float largeur,
 
 /**
  * @brief Colis::Colis
+ * Constructeur par copie de la classe
+ * Colis qui prend en paramètre un json
+ * QByteArray qui contient les paramètres du colis
+ * à créer.
  * @param colisByteArray
  */
 Colis::Colis(QByteArray& colisByteArray)
@@ -43,6 +49,7 @@ Colis::Colis(QByteArray& colisByteArray)
 
 /**
  * @brief Colis::~Colis
+ * Desctructeur de la classe Colis
  */
 Colis::~Colis()
 {
@@ -51,7 +58,10 @@ Colis::~Colis()
 
 /**
  * @brief Colis::toJson
- * @return
+ * Cette méthode retourne un json au format
+ * QByteArray qui contient les attributs
+ * d'un objet de la classe Colis.
+ * @return QByteArray
  */
 QByteArray Colis::toJson()
 {
@@ -75,7 +85,8 @@ QByteArray Colis::toJson()
 
 /**
  * @brief Colis::getID
- * @return
+ * Cette méthode retourne l'ID du colis.
+ * @return QString
  */
 QString Colis::getID() const
 {
@@ -84,7 +95,8 @@ QString Colis::getID() const
 
 /**
  * @brief Colis::getHauteur
- * @return
+ * Cette méthode retourne la hauteur du colis.
+ * @return float
  */
 float Colis::getHauteur() const
 {
@@ -93,7 +105,8 @@ float Colis::getHauteur() const
 
 /**
  * @brief Colis::getLargeur
- * @return
+ * Cette méthode retourne la largeur du colis.
+ * @return float
  */
 float Colis::getLargeur() const
 {
@@ -102,7 +115,8 @@ float Colis::getLargeur() const
 
 /**
  * @brief Colis::getLongueur
- * @return
+ * Cette méthode retourne la longueur du colis.
+ * @return float
  */
 float Colis::getLongueur() const
 {
@@ -111,7 +125,9 @@ float Colis::getLongueur() const
 
 /**
  * @brief Colis::getNom
- * @return
+ * Cette méthode retourne le nom du destinataire
+ * du colis.
+ * @return QString
  */
 QString Colis::getNom() const
 {
@@ -120,7 +136,9 @@ QString Colis::getNom() const
 
 /**
  * @brief Colis::getPays
- * @return
+ * Cette méthode retourne le pays de
+ * destination du colis.
+ * @return QString
  */
 QString Colis::getPays() const
 {
@@ -129,7 +147,8 @@ QString Colis::getPays() const
 
 /**
  * @brief Colis::getPoids
- * @return
+ * Cette méthode retourne le poids du colis.
+ * @return float
  */
 float Colis::getPoids() const
 {
@@ -138,7 +157,9 @@ float Colis::getPoids() const
 
 /**
  * @brief Colis::getType
- * @return
+ * Cette méthode retourne le type d'emballage
+ * du colis.
+ * @return QString
  */
 QString Colis::getType() const
 {
@@ -147,7 +168,9 @@ QString Colis::getType() const
 
 /**
  * @brief Colis::toString
- * @return
+ * Cette méthode retourne toutes les informations
+ * du colis.
+ * @return QString
  */
 QString Colis::toString()
 {
@@ -166,8 +189,11 @@ QString Colis::toString()
 
 /**
  * @brief Colis::operator %
- * @param c
- * @return
+ * Cette méthode surcharge l'opérateur % et
+ * permet de connaitre la somme des poids
+ * de deux colis.
+ * @param c: objet Colis
+ * @return float
  */
 float Colis::operator%(const Colis c) const
 {
@@ -176,8 +202,11 @@ float Colis::operator%(const Colis c) const
 
 /**
  * @brief Colis::operator$
- * @param c
- * @return
+ * Cette méthode surcharge l'opérateur $ et
+ * permet de connaitre la somme des volumes
+ * de deux colis.
+ * @param c: objet Colis
+ * @return float
  */
 float Colis::operator$(const Colis c) const
 {
