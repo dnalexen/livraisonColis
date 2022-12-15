@@ -1,5 +1,4 @@
 #include "colis.h"
-
 /**
  * @brief Colis::Colis
  * @param hauteur
@@ -163,4 +162,24 @@ QString Colis::toString()
     line += "Poids:" + QString::number(getPoids());
 
     return line;
+}
+
+/**
+ * @brief Colis::operator %
+ * @param c
+ * @return
+ */
+float Colis::operator%(const Colis c) const
+{
+    return mPoids + c.mPoids;
+}
+
+/**
+ * @brief Colis::operator$
+ * @param c
+ * @return
+ */
+float Colis::operator$(const Colis c) const
+{
+    return mHauteur*mLargeur*mLongueur + c.mHauteur*c.mLargeur*c.mLongueur;
 }

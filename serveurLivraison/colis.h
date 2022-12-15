@@ -32,6 +32,10 @@ public:
 
     QByteArray toJson();    
     QString toString();
+
+    float operator%(const Colis)const;
+    float operator$(const Colis)const;
+
 protected:
     QString mID;
     float mHauteur;
