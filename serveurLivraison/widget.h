@@ -7,6 +7,8 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
+#include <QPdfWriter>
+#include <QPainter>
 #include "camion.h"
 
 using namespace std;
