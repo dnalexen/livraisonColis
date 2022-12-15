@@ -108,15 +108,14 @@ void Widget::dataIsComing()
                         ui->lineEditVolumeCamionFrance->setText("0");
                         ui->tableWidgetFrance->setRowCount(0);
                     }
-
                     mListCamions.removeAt(i);
-
                     Camion* camion = new Camion(c.getPays(), 1000, 40000);
                     colisAjoute = camion->addColis(c);
                     if(colisAjoute)
                         miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
                     mListCamions.append(camion);
                 }
+                break;
             }
         }
     }
