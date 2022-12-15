@@ -1,7 +1,6 @@
 #include "widget.h"
 
 #include <QApplication>
-#include "ColisStatique.h"
 
 /**
  * @brief main
