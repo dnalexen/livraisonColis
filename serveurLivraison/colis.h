@@ -9,7 +9,7 @@
 #include <QJsonArray>
 
 /**
- * @brief The Colis class
+ * @brief La classe Colis
  */
 class Colis
 {

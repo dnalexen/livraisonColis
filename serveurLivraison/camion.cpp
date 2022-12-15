@@ -2,9 +2,11 @@
 
 /**
  * @brief Camion::Camion
- * @param pays
- * @param poidsMax
- * @param volumeMax
+ * Ce constructeur de la classe Camion
+ * permet de créer un camion.
+ * @param pays: pays de destination du camion
+ * @param poidsMax: poids maximum du camion
+ * @param volumeMax: volume maximum du camion
  */
 Camion::Camion(QString pays, float poidsMax, float volumeMax)
 {
@@ -18,7 +20,8 @@ Camion::Camion(QString pays, float poidsMax, float volumeMax)
 
 /**
  * @brief Camion::getID
- * @return
+ * Cette méthode retourne l'ID du camion.
+ * @return QString
  */
 QString Camion::getID() const
 {
@@ -27,7 +30,9 @@ QString Camion::getID() const
 
 /**
  * @brief Camion::getColisList
- * @return
+ * Cette méthode retourne la liste des colis
+ * du camion.
+ * @return QList<Colis>
  */
 QList<Colis> Camion::getColisList() const
 {
@@ -36,7 +41,9 @@ QList<Colis> Camion::getColisList() const
 
 /**
  * @brief Camion::getPays
- * @return
+ * Cette méthode retourne le pays de
+ * destination du camion.
+ * @return QString
  */
 QString Camion::getPays() const
 {
@@ -45,7 +52,9 @@ QString Camion::getPays() const
 
 /**
  * @brief Camion::getPoids
- * @return
+ * Cette méthode retourne le poids du
+ * camion.
+ * @return float
  */
 float Camion::getPoids() const
 {
@@ -54,7 +63,9 @@ float Camion::getPoids() const
 
 /**
  * @brief Camion::getPoidsMax
- * @return
+ * Cette méthode retourne le poids
+ * maximum du camion.
+ * @return float
  */
 float Camion::getPoidsMax() const
 {
@@ -63,7 +74,9 @@ float Camion::getPoidsMax() const
 
 /**
  * @brief Camion::getVolume
- * @return
+ * Cette méthode retourne le volume
+ * du camion.
+ * @return float
  */
 float Camion::getVolume() const
 {
@@ -72,7 +85,9 @@ float Camion::getVolume() const
 
 /**
  * @brief Camion::getVolumeMax
- * @return
+ * Cette méthode retourne le volume
+ * maximum du camion.
+ * @return float
  */
 float Camion::getVolumeMax() const
 {
@@ -81,15 +96,14 @@ float Camion::getVolumeMax() const
 
 /**
  * @brief Camion::addColis
- * @param c
- * @return
+ * Cette méthode permet de charger un
+ * colis dans le camion.
+ * @param c: objet Colis à ajouté
+ * @return bool
  */
 bool Camion::addColis(Colis& c)
 {
     float volumeColis = c.getHauteur() * c.getLargeur() * c.getLongueur();
-
-    //qDebug() << "Poids: " << mPoids;
-    //qDebug() << "Volume: " << mVolume;
 
     if(
         ((mPoids + c.getPoids()) < mPoidsMax)
@@ -97,23 +111,20 @@ bool Camion::addColis(Colis& c)
         ((mVolume + volumeColis) < mVolumeMax)
        )
     {
-       //qDebug() << "in";
        mColisList.append(c);
        mVolume += volumeColis;
        mPoids += c.getPoids();
 
-       //qDebug() << "Poids: " << mPoids;
-       //qDebug() << "Volume: " << mVolume;
-
        return true;
     }
-
     return false;
 }
 
 /**
  * @brief Camion::toString
- * @return
+ * Cette méthode retourne toutes les informations
+ * du camion.
+ * @return QString
  */
 QString Camion::toString()
 {

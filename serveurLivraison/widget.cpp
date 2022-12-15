@@ -39,6 +39,8 @@ Widget::~Widget()
 
 /**
  * @brief Widget::clientConnected
+ * Cette méthode gère la connection
+ * d'un client au serveur.
  */
 void Widget::clientConnected()
 {
@@ -50,6 +52,8 @@ void Widget::clientConnected()
 
 /**
  * @brief Widget::clientDisconnected
+ * Cette méthode gère la déconnection
+ * d'un client du serveur.
  */
 void Widget::clientDisconnected()
 {
@@ -60,6 +64,8 @@ void Widget::clientDisconnected()
 
 /**
  * @brief Widget::dataIsComing
+ * Cette méthode permet de réceptionner un colis
+ * et le charger dans un camion.
  */
 void Widget::dataIsComing()
 {
@@ -126,7 +132,9 @@ void Widget::dataIsComing()
 
 /**
  * @brief Widget::envoiCamion
- * @param ptrCamion
+ * Cette méthode permet de générer le bordereau
+ * de transport d'un Camion.
+ * @param ptrCamion: pointeur d'un Camion
  */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
@@ -168,7 +176,7 @@ void Widget::envoiCamion(Camion* ptrCamion)
     painter.setFont(font);
 
     QString cheminImage;
-    int largeurImage, hauteurImage;
+    int largeurImage=0, hauteurImage=0;
 
     if(ptrCamion->getPays() == "Allemagne")
     {
@@ -231,10 +239,12 @@ void Widget::envoiCamion(Camion* ptrCamion)
 
 /**
  * @brief Widget::miseAJourFenetre
- * @param pays
- * @param poids
- * @param volume
- * @param c
+ * Cette méthode met à jour l'interface de
+ * chargement des camions.
+ * @param pays: pays de destination du camion
+ * @param poids: poids du camion
+ * @param volume: volume du camion
+ * @param c: colis ajouté au camion
  */
 void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
 {

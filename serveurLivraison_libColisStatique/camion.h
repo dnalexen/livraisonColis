@@ -7,7 +7,7 @@
 #include "ColisStatique.h"
 
 /**
- * @brief The Camion class
+ * @brief La classe Camion
  */
 class Camion
 {

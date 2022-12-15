@@ -25,7 +25,7 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QSettings settings("../clientLivraison/settings.ini", QSettings::IniFormat);
+    QSettings settings("../clientLivraison_libColisStatique/settings.ini", QSettings::IniFormat);
 
     hauteurPetit = settings.value("Petit/Hauteur", "settings").toFloat();
     largeurPetit = settings.value("Petit/Largeur", "settings").toFloat();
@@ -63,21 +63,11 @@ Widget::~Widget()
 
 /**
  * @brief Widget::envoisColis
+ * Cette méthode permet d'envoyer un colis
+ * au serveur.
  */
 void Widget::envoisColis()
 {
-//    float hauteurPetit = 0.5;
-//    float largeurPetit = 0.7;
-//    float longueurPetit = 1;
-
-//    float hauteurMoyen = 0.7;
-//    float largeurMoyen = 0.9;
-//    float longueurMoyen = 1.2;
-
-//    float hauteurGrand = 1;
-//    float largeurGrand = 1.2;
-//    float longueurGrand = 1.5;
-
     float hauteur, largeur, longueur, volume;
     float poids;
 
@@ -115,6 +105,8 @@ void Widget::envoisColis()
 
 /**
  * @brief Widget::Connected
+ * Cette méthode permet d'activer le bouton
+ * Envoyer lorsque le client est connecté.
  */
 void Widget::Connected()
 {
@@ -123,6 +115,8 @@ void Widget::Connected()
 
 /**
  * @brief Widget::Disconnected
+ * Cette méthode permet de désactiver le bouton
+ * Envoyer lorsque le client est déconnecté.
  */
 void Widget::Disconnected()
 {

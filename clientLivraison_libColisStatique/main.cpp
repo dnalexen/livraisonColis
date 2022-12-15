@@ -1,3 +1,15 @@
+/**
+* @file main.cpp
+* fichier principal du programme in C++.
+* Ce programme est la partie client qui
+* permet d'envoyer les colis à la partie serveur.
+* Il utilise la bibliothèque statique
+* libColisStatique.a qui gère la classe Colis.
+* @author Alexandre Djossou
+* @date 15 deécembre 2022
+* @version 1.0
+* @copyright GNU Public License
+*/
 #include "widget.h"
 
 #include <QApplication>

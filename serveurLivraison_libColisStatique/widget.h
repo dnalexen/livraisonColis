@@ -18,7 +18,7 @@ namespace Ui { class Widget; }
 QT_END_NAMESPACE
 
 /**
- * @brief The Widget class
+ * @brief La classe Widget
  */
 class Widget : public QWidget
 {
