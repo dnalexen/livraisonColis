@@ -4,18 +4,18 @@
 #include <QDebug>
 #include "dbmanager.h"
 
-DbManager::DbManager(const QString& path)
+DbManager::DbManager()
 {
     m_db = QSqlDatabase::addDatabase("QSQLITE");
-    m_db.setDatabaseName(path);
+    m_db.setDatabaseName("../serveurLivraison/Livraison.db");
 
     if (!m_db.open())
     {
-        qDebug() << "Error: connection with database fail";
+        qDebug() << "Erreur: échec de la connexion avec la Base de Données";
     }
     else
     {
-        qDebug() << "Database: connection ok";
+        qDebug() << "Base de Données: connexion ok";
     }
 }
 
