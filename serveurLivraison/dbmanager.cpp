@@ -46,7 +46,7 @@ bool DbManager::createTable(QString tableName)
 
     if (!query.exec())
     {
-        qDebug() << QString("La table %1 n'a pas pu être créée: elle existe peut-être déjà.").arg(tableName);
+        qDebug() << QString("La table %1 n'a pas été créée: elle existe déjà.").arg(tableName);
         success = false;
     }
     else

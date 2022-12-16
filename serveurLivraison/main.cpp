@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 //    Camion ca1("Espagne", 120, 15000);
 //    Camion ca2("Allemagne", 105.9, 16000);
 
-//    DbManager db("Livraison");
+    //DbManager db("Livraison");
 //    db.createTable("tableColis");
 //    db.createTable("tableCamion");
 
