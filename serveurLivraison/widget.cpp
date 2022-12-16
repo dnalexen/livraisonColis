@@ -1,7 +1,7 @@
 #include "widget.h"
 #include "./ui_widget.h"
 
-#define POIDS_MAX 100
+#define POIDS_MAX 500
 #define VOLUME_MAX 40000
 
 /**
@@ -162,10 +162,10 @@ void Widget::dataIsComing()
  */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
-    if(!QDir("bordereauxTransport").exists())
-        QDir().mkdir("bordereauxTransport");
+    if(!QDir("../serveurLivraison/bordereauxTransport").exists())
+        QDir().mkdir("../serveurLivraison/bordereauxTransport");
 
-    QString filename = "bordereauxTransport/" + ptrCamion->getID();
+    QString filename = "../serveurLivraison/bordereauxTransport/" + ptrCamion->getID();
     QFile file(filename + ".txt");
 
     if(!file.open(QFile::WriteOnly |
@@ -204,19 +204,19 @@ void Widget::envoiCamion(Camion* ptrCamion)
 
     if(ptrCamion->getPays() == "Allemagne")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/allemagne.jpeg";
+        cheminImage = "../serveurLivraison/images/allemagne.jpeg";
         largeurImage = 275;
         hauteurImage = 183;
     }
     else if(ptrCamion->getPays() == "Espagne")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/espagne.jpeg";
+        cheminImage = "../serveurLivraison/images/espagne.jpeg";
         largeurImage = 270;
         hauteurImage = 187;
     }
     else if(ptrCamion->getPays() == "France")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/france.jpeg";
+        cheminImage = "../serveurLivraison/images/france.jpeg";
         largeurImage = 221;
         hauteurImage = 228;
     }
