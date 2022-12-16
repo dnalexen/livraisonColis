@@ -15,6 +15,10 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("serveur");
 
+    ui->tableWidgetAllemagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+    ui->tableWidgetFrance->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+    ui->tableWidgetEspagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+
     ui->pushButtonAllemagne->setVisible(false);
     ui->pushButtonEspagne->setVisible(false);
     ui->pushButtonFrance->setVisible(false);
@@ -117,23 +121,26 @@ void Widget::dataIsComing()
                     if(mListCamions[i]->getPays() == "Allemagne")
                     {
                         ui->tableWidgetAllemagne->clear();
-                        ui->lineEditPoidsCamionAllemagne->setText("0");
-                        ui->lineEditVolumeCamionAllemagne->setText("0");
                         ui->tableWidgetAllemagne->setRowCount(0);
+                        ui->tableWidgetAllemagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+                        ui->lineEditPoidsCamionAllemagne->setText("0");
+                        ui->lineEditVolumeCamionAllemagne->setText("0");                        
                     }
                     else if(mListCamions[i]->getPays() == "Espagne")
                     {
                         ui->tableWidgetEspagne->clear();
-                        ui->lineEditPoidsCamionEspagne->setText("0");
-                        ui->lineEditVolumeCamionEspagne->setText("0");
                         ui->tableWidgetEspagne->setRowCount(0);
+                        ui->tableWidgetEspagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+                        ui->lineEditPoidsCamionEspagne->setText("0");
+                        ui->lineEditVolumeCamionEspagne->setText("0");                        
                     }
                     else if(mListCamions[i]->getPays() == "France")
                     {
                         ui->tableWidgetFrance->clear();
-                        ui->lineEditPoidsCamionFrance->setText("0");
-                        ui->lineEditVolumeCamionFrance->setText("0");
                         ui->tableWidgetFrance->setRowCount(0);
+                        ui->tableWidgetFrance->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+                        ui->lineEditPoidsCamionFrance->setText("0");
+                        ui->lineEditVolumeCamionFrance->setText("0");                        
                     }
                     mListCamions.removeAt(i);
                     Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
@@ -279,25 +286,25 @@ void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
         ui->tableWidgetAllemagne->setRowCount(nbRows+1);
         ui->tableWidgetAllemagne->setCellWidget(nbRows, 0, new QLabel(c.getNom()));
         ui->tableWidgetAllemagne->setCellWidget(nbRows, 1, new QLabel(c.getType()));
-        ui->tableWidgetAllemagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 2)));
-        ui->lineEditPoidsCamionAllemagne->setText(QString::number(poids, 'f', 2));
-        ui->lineEditVolumeCamionAllemagne->setText(QString::number(volume, 'f', 2));
+        ui->tableWidgetAllemagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
+        ui->lineEditPoidsCamionAllemagne->setText(QString::number(poids, 'f', 1) + " kg");
+        ui->lineEditVolumeCamionAllemagne->setText(QString::number(volume, 'f', 1) + " m³");
     } else if(pays=="Espagne"){
         int nbRows = ui->tableWidgetEspagne->rowCount();
         ui->tableWidgetEspagne->setRowCount(nbRows+1);
         ui->tableWidgetEspagne->setCellWidget(nbRows, 0, new QLabel(c.getNom()));
         ui->tableWidgetEspagne->setCellWidget(nbRows, 1, new QLabel(c.getType()));
-        ui->tableWidgetEspagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 2)));
-        ui->lineEditPoidsCamionEspagne->setText(QString::number(poids, 'f', 2));
-        ui->lineEditVolumeCamionEspagne->setText(QString::number(volume, 'f', 2));
+        ui->tableWidgetEspagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
+        ui->lineEditPoidsCamionEspagne->setText(QString::number(poids, 'f', 1) + " kg");
+        ui->lineEditVolumeCamionEspagne->setText(QString::number(volume, 'f', 1) + " m³");
     } else {
         int nbRows = ui->tableWidgetFrance->rowCount();
         ui->tableWidgetFrance->setRowCount(nbRows+1);
         ui->tableWidgetFrance->setCellWidget(nbRows, 0, new QLabel(c.getNom()));
         ui->tableWidgetFrance->setCellWidget(nbRows, 1, new QLabel(c.getType()));
-        ui->tableWidgetFrance->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 2)));
-        ui->lineEditPoidsCamionFrance->setText(QString::number(poids, 'f', 2));
-        ui->lineEditVolumeCamionFrance->setText(QString::number(volume, 'f', 2));
+        ui->tableWidgetFrance->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
+        ui->lineEditPoidsCamionFrance->setText(QString::number(poids, 'f', 1) + " kg");
+        ui->lineEditVolumeCamionFrance->setText(QString::number(volume, 'f', 1) + " m³");
     }
 }
 

@@ -95,11 +95,11 @@ void Widget::envoisColis()
 
     poids = monColis.getPoids();
 
-    ui->lineEditHauteur->setText(QString::number(hauteur));
-    ui->lineEditLargeur->setText(QString::number(largeur));
-    ui->lineEditLongueur->setText(QString::number(longueur));
-    ui->lineEditPoids->setText(QString::number(poids, 'f', 1));
-    ui->lineEditVolume->setText(QString::number(volume));    
+    ui->lineEditHauteur->setText(QString::number(hauteur) + " m");
+    ui->lineEditLargeur->setText(QString::number(largeur) + " m");
+    ui->lineEditLongueur->setText(QString::number(longueur) + " m");
+    ui->lineEditPoids->setText(QString::number(poids, 'f', 1) + " kg");
+    ui->lineEditVolume->setText(QString::number(volume, 'f', 1) + " m³");
 
     mSock->write(monColis.toJson());
 }
