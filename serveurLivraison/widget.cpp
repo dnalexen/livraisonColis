@@ -1,7 +1,7 @@
 #include "widget.h"
 #include "./ui_widget.h"
 
-#define POIDS_MAX 500
+#define POIDS_MAX 100
 #define VOLUME_MAX 40000
 
 /**
@@ -80,7 +80,7 @@ void Widget::dataIsComing()
     //qDebug() << c.toString();
 
     QStringList destinationsCamionsList;
-    bool colisAjoute=false;
+    bool succesAjoutColis=false;
 
     for(int i=0; i<mListCamions.size(); i++)
         destinationsCamionsList.append(mListCamions[i]->getPays());
@@ -89,8 +89,8 @@ void Widget::dataIsComing()
     {
         Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
         mDB->addCamion(ptrCamion);
-        colisAjoute = ptrCamion->addColis(c);
-        if(colisAjoute)
+        succesAjoutColis = ptrCamion->addColis(c);
+        if(succesAjoutColis)
         {
             mDB->addColis(&c, ptrCamion->getID());
             mDB->updatePoidsCamion(ptrCamion->getID(), ptrCamion->getPoids());
@@ -103,15 +103,15 @@ void Widget::dataIsComing()
         {
             if(mListCamions[i]->getPays() == c.getPays())
             {
-                colisAjoute = mListCamions[i]->addColis(c);
-                if(colisAjoute)
+                succesAjoutColis = mListCamions[i]->addColis(c);
+                if(succesAjoutColis)
                 {
                     mDB->addColis(&c, mListCamions[i]->getID());
                     mDB->updatePoidsCamion(mListCamions[i]->getID(), mListCamions[i]->getPoids());
                     mDB->updateVolumeCamion(mListCamions[i]->getID(), mListCamions[i]->getVolume());
                     miseAJourFenetre(mListCamions[i]->getPays(), mListCamions[i]->getPoids(), mListCamions[i]->getVolume(), c);
                 }
-                if(!colisAjoute)
+                else if(!succesAjoutColis)
                 {
                     envoiCamion(mListCamions[i]);
                     if(mListCamions[i]->getPays() == "Allemagne")
@@ -120,13 +120,16 @@ void Widget::dataIsComing()
                         ui->lineEditPoidsCamionAllemagne->setText("0");
                         ui->lineEditVolumeCamionAllemagne->setText("0");
                         ui->tableWidgetAllemagne->setRowCount(0);
-                    } else if(mListCamions[i]->getPays() == "Espagne")
+                    }
+                    else if(mListCamions[i]->getPays() == "Espagne")
                     {
                         ui->tableWidgetEspagne->clear();
                         ui->lineEditPoidsCamionEspagne->setText("0");
                         ui->lineEditVolumeCamionEspagne->setText("0");
                         ui->tableWidgetEspagne->setRowCount(0);
-                    } else {
+                    }
+                    else if(mListCamions[i]->getPays() == "France")
+                    {
                         ui->tableWidgetFrance->clear();
                         ui->lineEditPoidsCamionFrance->setText("0");
                         ui->lineEditVolumeCamionFrance->setText("0");
@@ -134,12 +137,13 @@ void Widget::dataIsComing()
                     }
                     mListCamions.removeAt(i);
                     Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
-                    colisAjoute = ptrCamion->addColis(c);
-                    if(colisAjoute)
+                    mDB->addCamion(ptrCamion);
+                    succesAjoutColis = ptrCamion->addColis(c);
+                    if(succesAjoutColis)
                     {
-                        mDB->addColis(&c, mListCamions[i]->getID());
-                        mDB->updatePoidsCamion(mListCamions[i]->getID(), mListCamions[i]->getPoids());
-                        mDB->updateVolumeCamion(mListCamions[i]->getID(), mListCamions[i]->getVolume());
+                        mDB->addColis(&c, ptrCamion->getID());
+                        mDB->updatePoidsCamion(ptrCamion->getID(), ptrCamion->getPoids());
+                        mDB->updateVolumeCamion(ptrCamion->getID(), ptrCamion->getVolume());
                         miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
                     }
                     mListCamions.append(ptrCamion);
