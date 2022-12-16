@@ -41,6 +41,6 @@ private:
     QTcpServer* mServer;
     QList<QTcpSocket*> mClients;
     QList<Camion*> mListCamions;
-    DbManager* mDB = new DbManager("Livraison.db");
+    DbManager* mDB = new DbManager("../serveurLivraison/Livraison.db");
 };
 #endif // WIDGET_H
