@@ -15,6 +15,7 @@ link_directories("/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livrai
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Network)
+find_package(Qt6 REQUIRED COMPONENTS Sql)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -23,6 +24,8 @@ set(PROJECT_SOURCES
         widget.ui
         camion.h
         camion.cpp
+        dbmanager.h
+        dbmanager.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -51,6 +54,7 @@ endif()
 target_link_libraries(serveurLivraison_libColisStatique PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(serveurLivraison_libColisStatique PRIVATE "libColisStatique.a")
 target_link_libraries(serveurLivraison_libColisStatique PRIVATE Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(serveurLivraison_libColisStatique PRIVATE Qt6::Sql)
 
 set_target_properties(serveurLivraison_libColisStatique PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

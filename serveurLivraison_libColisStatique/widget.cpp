@@ -1,6 +1,5 @@
 #include "widget.h"
 #include "./ui_widget.h"
-#include "ColisStatique.h"
 
 #define POIDS_MAX 500
 #define VOLUME_MAX 40000
@@ -23,6 +22,9 @@ Widget::Widget(QWidget *parent)
     mServer = new QTcpServer(this);
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
+
+    mDB->createTable("tableColis");
+    mDB->createTable("tableCamion");
 }
 
 /**
@@ -35,6 +37,8 @@ Widget::~Widget()
 
     for(int i=0; i<mListCamions.size(); i++)
         delete mListCamions[i];
+
+    delete mDB;
 }
 
 /**
@@ -76,27 +80,38 @@ void Widget::dataIsComing()
     //qDebug() << c.toString();
 
     QStringList destinationsCamionsList;
-    bool colisAjoute=false;
+    bool succesAjoutColis=false;
 
     for(int i=0; i<mListCamions.size(); i++)
         destinationsCamionsList.append(mListCamions[i]->getPays());
 
     if(!destinationsCamionsList.contains(c.getPays()))
     {
-        Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
-        colisAjoute = camion->addColis(c);
-        if(colisAjoute)
-            miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
-        mListCamions.append(camion);
+        Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
+        mDB->addCamion(ptrCamion);
+        succesAjoutColis = ptrCamion->addColis(c);
+        if(succesAjoutColis)
+        {
+            mDB->addColis(&c, ptrCamion->getID());
+            mDB->updatePoidsCamion(ptrCamion->getID(), ptrCamion->getPoids());
+            mDB->updateVolumeCamion(ptrCamion->getID(), ptrCamion->getVolume());
+            miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
+        }
+        mListCamions.append(ptrCamion);
     }else{
         for(int i=0; i<mListCamions.size(); i++)
         {
             if(mListCamions[i]->getPays() == c.getPays())
             {
-                colisAjoute = mListCamions[i]->addColis(c);
-                if(colisAjoute)
+                succesAjoutColis = mListCamions[i]->addColis(c);
+                if(succesAjoutColis)
+                {
+                    mDB->addColis(&c, mListCamions[i]->getID());
+                    mDB->updatePoidsCamion(mListCamions[i]->getID(), mListCamions[i]->getPoids());
+                    mDB->updateVolumeCamion(mListCamions[i]->getID(), mListCamions[i]->getVolume());
                     miseAJourFenetre(mListCamions[i]->getPays(), mListCamions[i]->getPoids(), mListCamions[i]->getVolume(), c);
-                if(!colisAjoute)
+                }
+                if(!succesAjoutColis)
                 {
                     envoiCamion(mListCamions[i]);
                     if(mListCamions[i]->getPays() == "Allemagne")
@@ -105,24 +120,33 @@ void Widget::dataIsComing()
                         ui->lineEditPoidsCamionAllemagne->setText("0");
                         ui->lineEditVolumeCamionAllemagne->setText("0");
                         ui->tableWidgetAllemagne->setRowCount(0);
-                    } else if(mListCamions[i]->getPays() == "Espagne")
+                    }
+                    else if(mListCamions[i]->getPays() == "Espagne")
                     {
                         ui->tableWidgetEspagne->clear();
                         ui->lineEditPoidsCamionEspagne->setText("0");
                         ui->lineEditVolumeCamionEspagne->setText("0");
                         ui->tableWidgetEspagne->setRowCount(0);
-                    } else {
+                    }
+                    else if(mListCamions[i]->getPays() == "France")
+                    {
                         ui->tableWidgetFrance->clear();
                         ui->lineEditPoidsCamionFrance->setText("0");
                         ui->lineEditVolumeCamionFrance->setText("0");
                         ui->tableWidgetFrance->setRowCount(0);
                     }
                     mListCamions.removeAt(i);
-                    Camion* camion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
-                    colisAjoute = camion->addColis(c);
-                    if(colisAjoute)
-                        miseAJourFenetre(camion->getPays(), camion->getPoids(), camion->getVolume(), c);
-                    mListCamions.append(camion);
+                    Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
+                    mDB->addCamion(ptrCamion);
+                    succesAjoutColis = ptrCamion->addColis(c);
+                    if(succesAjoutColis)
+                    {
+                        mDB->addColis(&c, ptrCamion->getID());
+                        mDB->updatePoidsCamion(ptrCamion->getID(), ptrCamion->getPoids());
+                        mDB->updateVolumeCamion(ptrCamion->getID(), ptrCamion->getVolume());
+                        miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
+                    }
+                    mListCamions.append(ptrCamion);
                 }
                 break;
             }
@@ -139,10 +163,10 @@ void Widget::dataIsComing()
  */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
-    if(!QDir("bordereauxTransport").exists())
-        QDir().mkdir("bordereauxTransport");
+    if(!QDir("../serveurLivraison_libColisStatique/bordereauxTransport").exists())
+        QDir().mkdir("../serveurLivraison_libColisStatique/bordereauxTransport");
 
-    QString filename = "bordereauxTransport/" + ptrCamion->getID();
+    QString filename = "../serveurLivraison_libColisStatique/bordereauxTransport/" + ptrCamion->getID();
     QFile file(filename + ".txt");
 
     if(!file.open(QFile::WriteOnly |
@@ -181,19 +205,19 @@ void Widget::envoiCamion(Camion* ptrCamion)
 
     if(ptrCamion->getPays() == "Allemagne")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/allemagne.jpeg";
+        cheminImage = "../serveurLivraison_libColisStatique/images/allemagne.jpeg";
         largeurImage = 275;
         hauteurImage = 183;
     }
     else if(ptrCamion->getPays() == "Espagne")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/espagne.jpeg";
+        cheminImage = "../serveurLivraison_libColisStatique/images/espagne.jpeg";
         largeurImage = 270;
         hauteurImage = 187;
     }
     else if(ptrCamion->getPays() == "France")
     {
-        cheminImage = "/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/serveurLivraison/images/france.jpeg";
+        cheminImage = "../serveurLivraison_libColisStatique/images/france.jpeg";
         largeurImage = 221;
         hauteurImage = 228;
     }

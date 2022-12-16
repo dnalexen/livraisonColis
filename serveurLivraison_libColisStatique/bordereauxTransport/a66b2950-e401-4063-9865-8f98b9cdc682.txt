@@ -1,0 +1,25 @@
+Bordereau de transport
+
+Information du camion:
+ID:a66b2950-e401-4063-9865-8f98b9cdc682;Pays:Allemagne;Poids:489.4;Poids max:500;Volume:6.65;Volume max:40000;Nombre de colis:19
+
+Information des colis:
+1- ID:bba6252f-c658-4fbf-9341-812b187ffbf9;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:45
+2- ID:38d629f9-af73-488c-ab8d-8ac1591e64fb;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:1.8
+3- ID:6b6584f5-49ed-4041-a094-cf3684a2d2e9;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:3.4
+4- ID:b6915e5d-e358-4ab5-9ecc-6e9c632f0197;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:3
+5- ID:5c05ed63-010a-4007-913e-fd8becf7bcbc;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:36
+6- ID:78a59edf-5174-4f23-a561-1b4f4a85a679;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:27.4
+7- ID:73c1cc70-bc32-48ba-b287-2d21548fd029;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:46.8
+8- ID:4429e8c0-e003-4ffb-bbad-6db39976a8b2;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:37.8
+9- ID:33be1294-3209-4f5c-a510-4e235dac67e7;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:0.9
+10- ID:2ad9dc11-6795-4fca-b3f5-0dec0f28dcf9;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:43.3
+11- ID:a9998989-36de-4101-b915-d6281acda171;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:41.8
+12- ID:b8c98fe6-f4c6-4a90-af1b-7642c213500f;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:15
+13- ID:6f5e9a21-1ddb-44f9-a225-53b95a9d35fe;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:29.1
+14- ID:4e013012-3f72-41f5-b776-26a1a7ee7f0f;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:43.3
+15- ID:a540a391-f050-460f-b9ea-c3be61614e44;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:18.8
+16- ID:e820e604-d9d4-4bea-abbf-58bb6a3fb316;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:21
+17- ID:69393e34-e43c-410c-bc3b-728274e24304;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:38
+18- ID:83e812d4-7cd8-48d0-8590-2b5bcce7d41d;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:10.3
+19- ID:f989582c-1716-4d21-a0e9-e169d52f3a3d;Nom:Serena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:26.7
