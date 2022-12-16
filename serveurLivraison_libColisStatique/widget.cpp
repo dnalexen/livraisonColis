@@ -242,7 +242,7 @@ void Widget::envoiCamion(Camion* ptrCamion)
     y +=400;
     painter.drawText(100, y, "Information du camion:");
 
-    font.setPixelSize(150);
+    font.setPixelSize(140);
     painter.setFont(font);
     y +=250;
     painter.drawText(100, y, ptrCamion->toString());
@@ -252,7 +252,7 @@ void Widget::envoiCamion(Camion* ptrCamion)
     y +=400;
     painter.drawText(100, y, "Information des colis:");
 
-    font.setPixelSize(150);
+    font.setPixelSize(140);
     painter.setFont(font);
     i=1;
     QString line;
