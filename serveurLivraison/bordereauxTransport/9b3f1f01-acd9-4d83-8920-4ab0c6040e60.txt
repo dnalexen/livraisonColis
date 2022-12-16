@@ -1,0 +1,25 @@
+Bordereau de transport
+
+Information du camion:
+ID:9b3f1f01-acd9-4d83-8920-4ab0c6040e60;Pays:France;Poids:498.4;Poids max:500;Volume:33.156;Volume max:40000;Nombre de colis:19
+
+Information des colis:
+1- ID:d57d135b-25eb-4e0a-9be4-fac49509cc66;Nom:Petra;Pays:France;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:44
+2- ID:c1071feb-b4c5-4284-8446-5d7df20ff88b;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:33.6
+3- ID:ed6bad77-6bfa-4785-aa19-61a767388392;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:43.6
+4- ID:8088fce9-77c1-4306-b8f2-230bc79c61e2;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:33.3
+5- ID:c61bf141-c0ac-41cb-994c-2d2d3113550f;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:19.3
+6- ID:c495ecb7-721e-4777-bd89-dec60c8e3471;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:18.9
+7- ID:ff140d17-eb78-4acd-9186-aaa3208446cd;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:31
+8- ID:caa7a736-981d-492f-baef-10ad628f2be6;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:16.4
+9- ID:a2b9ed86-5221-448a-b1ac-f0986ffed60c;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:9.6
+10- ID:4f82f68e-475f-4112-8e28-ac2afaf6b2a3;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:23.2
+11- ID:6162d7ed-7307-46c4-9f5b-693fc74a81e9;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:0.7
+12- ID:75187798-a77b-42b6-aa91-a0be8f4606ab;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:36.1
+13- ID:051d98e0-3763-446c-9f95-58cb8617f546;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:32
+14- ID:4d196c42-70b6-4fc2-bff0-4187a2c0eedf;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:26.7
+15- ID:4fe511a1-0313-4734-92f5-df1a8eb35d7a;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:11.5
+16- ID:f795ac54-69d0-43d8-a439-ea635fcce94e;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:40.4
+17- ID:d23281a8-ebcc-4d3c-8b36-db6aca581fec;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:13.2
+18- ID:d8db8684-494f-40af-9a2f-102a21503c6d;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:40.4
+19- ID:a8f8a0f5-7c51-4330-a6c4-bbbbd3128e91;Nom:Petra;Pays:France;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:24.5

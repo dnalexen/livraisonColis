@@ -1,0 +1,26 @@
+Bordereau de transport
+
+Information du camion:
+ID:d8d1b99f-fd26-4c06-8aaa-d86fe356d8c7;Pays:Allemagne;Poids:490.4;Poids max:500;Volume:7;Volume max:40000;Nombre de colis:20
+
+Information des colis:
+1- ID:165181fc-98f9-4d86-8a70-615bd8988fb3;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:40.4
+2- ID:0b6ebd1d-e324-47a7-a370-c434ca480198;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:4.6
+3- ID:0d577c13-4834-41f6-9afd-867eef82d673;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:0.8
+4- ID:19cf555b-b78c-4657-94e9-280cfeab79e3;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:47.4
+5- ID:accb56fc-df2a-4edd-adbc-cab8c280dcec;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:21.8
+6- ID:6f03a1af-bc6e-4a4a-a533-96dcf9a70552;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:32.5
+7- ID:14e4ae30-98ea-4ecb-9b8e-605ab3c64ffb;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:18.5
+8- ID:8a0fd232-a169-4f12-a484-cae0cbd4256a;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:27.3
+9- ID:6914e7e5-3d19-49a2-8f9d-3749ab90c1c3;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:5
+10- ID:8d321cb6-cb68-43ff-a4c7-ad7ad7b32123;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:17.6
+11- ID:df903480-abe7-42ff-8c77-31d14cb3a829;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:42.4
+12- ID:f3a6ceb3-2682-461c-b6ee-cbc89cd7b306;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:44.9
+13- ID:3ce92ec5-f6e9-49e5-8af6-6675ee85a1a4;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:46.7
+14- ID:15523691-24b4-498d-b707-e374621b066f;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:8
+15- ID:294e933d-20af-4c8b-9710-8bff68fb73ef;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:10.7
+16- ID:85f445f4-cf87-433c-9f03-5d1ad5287c6b;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:28.8
+17- ID:786d1d08-1b30-49b7-b597-e726f790ae33;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:31.1
+18- ID:5434d769-30a3-47fa-8381-e8db4f7dd689;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:24.5
+19- ID:41c6a6c3-379b-43d5-9ebd-1cf1dde8fc24;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:22.9
+20- ID:d3c74db9-769b-44f2-9133-8a37c9e96de1;Nom:Petra;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:14.5
