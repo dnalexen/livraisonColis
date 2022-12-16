@@ -14,9 +14,6 @@
 #include "widget.h"
 
 #include <QApplication>
-#include "dbmanager.h"
-#include "colis.h"
-#include "camion.h"
 
 /**
  * @brief main
@@ -29,23 +26,6 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     Widget w;
     w.show();
-
-//    Colis c1(1.2, 2.3, 3.1, "Elena", "Portugal", "Moyen");
-//    Colis c2(1.2, 5, 3, "Elena", "Suisse", "Petit");
-//    Camion ca1("Espagne", 120, 15000);
-//    Camion ca2("Allemagne", 105.9, 16000);
-
-    //DbManager db("Livraison");
-//    db.createTable("tableColis");
-//    db.createTable("tableCamion");
-
-//    db.addColis(c1);
-//    db.addColis(c2);
-//    db.addCamion(ca1);
-//    db.addCamion(ca2);
-
-    //qDebug() << db.updatePoidsCamion("e2359e73-eb73-42ab-a911-60c02b2b460f", 5.55);
-    //qDebug() << db.updateVolumeCamion("e2359e73-eb73-42ab-a911-60c02b2b460f", 37.98);
 
     return a.exec();
 }

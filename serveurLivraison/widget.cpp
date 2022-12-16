@@ -4,10 +4,6 @@
 #define POIDS_MAX 500
 #define VOLUME_MAX 40000
 
-/**
- * @brief Widget::Widget
- * @param parent
- */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -31,9 +27,6 @@ Widget::Widget(QWidget *parent)
     mDB->createTable("tableCamion");
 }
 
-/**
- * @brief Widget::~Widget
- */
 Widget::~Widget()
 {
     delete mServer;
@@ -45,11 +38,6 @@ Widget::~Widget()
     delete mDB;
 }
 
-/**
- * @brief Widget::clientConnected
- * Cette méthode gère la connection
- * d'un client au serveur.
- */
 void Widget::clientConnected()
 {
     QTcpSocket* sockClient = mServer->nextPendingConnection();
@@ -58,11 +46,6 @@ void Widget::clientConnected()
     connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));    
 }
 
-/**
- * @brief Widget::clientDisconnected
- * Cette méthode gère la déconnection
- * d'un client du serveur.
- */
 void Widget::clientDisconnected()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
@@ -70,11 +53,6 @@ void Widget::clientDisconnected()
     sock->deleteLater();
 }
 
-/**
- * @brief Widget::dataIsComing
- * Cette méthode permet de réceptionner un colis
- * et le charger dans un camion.
- */
 void Widget::dataIsComing()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
@@ -161,12 +139,6 @@ void Widget::dataIsComing()
     }
 }
 
-/**
- * @brief Widget::envoiCamion
- * Cette méthode permet de générer le bordereau
- * de transport d'un Camion.
- * @param ptrCamion: pointeur d'un Camion
- */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
     if(!QDir("../serveurLivraison/bordereauxTransport").exists())
@@ -268,15 +240,6 @@ void Widget::envoiCamion(Camion* ptrCamion)
     delete ptrCamion;
 }
 
-/**
- * @brief Widget::miseAJourFenetre
- * Cette méthode met à jour l'interface de
- * chargement des camions.
- * @param pays: pays de destination du camion
- * @param poids: poids du camion
- * @param volume: volume du camion
- * @param c: colis ajouté au camion
- */
 void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
 {
     if(pays=="Allemagne")
