@@ -1,0 +1,4 @@
+<map id="DbManager::removeCamion" name="DbManager::removeCamion">
+<area shape="rect" id="node1" title="Supprime un camion de la table tableCamion de la base de données Livraison." alt="" coords="5,5,211,32"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a9b1f58efa9496b976f51642221246199" title="Vérifie si le camion existe dans la table tableCamion de la base de données Livraison." alt="" coords="259,5,451,32"/>
+</map>

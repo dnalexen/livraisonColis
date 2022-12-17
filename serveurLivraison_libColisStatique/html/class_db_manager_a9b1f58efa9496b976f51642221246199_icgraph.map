@@ -1,0 +1,8 @@
+<map id="DbManager::camionExists" name="DbManager::camionExists">
+<area shape="rect" id="node1" title="Vérifie si le camion existe dans la table tableCamion de la base de données Livraison." alt="" coords="303,107,495,133"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a900fb2cc1872995a612f42818cd3160f" title="Ajoute un camion à la table tableCamion de la base de données Livraison." alt="" coords="41,5,219,32"/>
+<area shape="rect" id="node3" href="$class_db_manager.html#af042feba27aa56fac50a46f496128fb1" title="Imprime les informations d&#39;un camion dans la base de données." alt="" coords="37,56,223,83"/>
+<area shape="rect" id="node4" href="$class_db_manager.html#a802135fe55a99f11d73f18d83fe6edae" title="Supprime un camion de la table tableCamion de la base de données Livraison." alt="" coords="27,107,233,133"/>
+<area shape="rect" id="node5" href="$class_db_manager.html#ad2964288722b82a87b5f8753d9281330" title="Mettre à jour le poids d&#39;un camion." alt="" coords="13,157,247,184"/>
+<area shape="rect" id="node6" href="$class_db_manager.html#a2c8975d80c87aaa2987bed654308f539" title="Mettre à jour le volume d&#39;un camion." alt="" coords="5,208,255,235"/>
+</map>

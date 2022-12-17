@@ -17,7 +17,6 @@
 class Colis
 {
 public:
-
     /**
      * @brief Colis
      * Ce constructeur de la classe Colis
@@ -146,14 +145,14 @@ public:
     float operator$(const Colis)const;
 
 protected:
-    QString mID;
-    float mHauteur;
-    float mLargeur;
-    float mLongueur;
-    QString mNom;
-    QString mPays;
-    float mPoids;
-    QString mType;
+    QString mID; //Id du colis
+    float mHauteur; //Hauteur du colis en mètre
+    float mLargeur; //Largeur du colis en mètre
+    float mLongueur; //Longueur du colis en mètre
+    QString mNom; //Nom du destinataire du colis
+    QString mPays; //Pays de destination du colis
+    float mPoids; //Poids du colis en kg
+    QString mType; //Type du colis (Petit / Moyen / Grand)
 };
 
 #endif // COLIS_H

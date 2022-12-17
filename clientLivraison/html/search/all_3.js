@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['gethauteur_8',['getHauteur',['../class_colis.html#aa120955475c05867313e44771987e6f0',1,'Colis']]],
+  ['getid_9',['getID',['../class_colis.html#a2beb6c2631afca5850475eeef8c84029',1,'Colis']]],
+  ['getlargeur_10',['getLargeur',['../class_colis.html#ad87f840334d430d4f174758cb9dbb807',1,'Colis']]],
+  ['getlongueur_11',['getLongueur',['../class_colis.html#a54e41caa48937c74bd9a5089bc76bea8',1,'Colis']]],
+  ['getnom_12',['getNom',['../class_colis.html#afbd321afea62a7fd0f85ef259083ecd6',1,'Colis']]],
+  ['getpays_13',['getPays',['../class_colis.html#a16042dec5f9516b5e115ee4113df5978',1,'Colis']]],
+  ['getpoids_14',['getPoids',['../class_colis.html#aba17a744324955b1855a8fa711ed49fe',1,'Colis']]],
+  ['gettype_15',['getType',['../class_colis.html#a84ea82729c12ca20c474c2c4357d444a',1,'Colis']]]
+];

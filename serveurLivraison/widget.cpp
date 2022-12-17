@@ -9,20 +9,20 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    setWindowTitle("serveur");
+    setWindowTitle("Serveur"); //Nommage de la fenêtre serveur
 
-    ui->tableWidgetAllemagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
-    ui->tableWidgetFrance->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
-    ui->tableWidgetEspagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+    //Entête colonnes tables
+    QStringList listEntetes = {"Nom", "Type", "Poids(kg)"};
+    ui->tableWidgetAllemagne->setHorizontalHeaderLabels(listEntetes);
+    ui->tableWidgetFrance->setHorizontalHeaderLabels(listEntetes);
+    ui->tableWidgetEspagne->setHorizontalHeaderLabels(listEntetes);
 
-    ui->pushButtonAllemagne->setVisible(false);
-    ui->pushButtonEspagne->setVisible(false);
-    ui->pushButtonFrance->setVisible(false);
-
+    //Etablissement du serveur TCP
     mServer = new QTcpServer(this);
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
 
+    //Création des tables tableColis et tableCamion dans la BD Livraison
     mDB->createTable("tableColis");
     mDB->createTable("tableCamion");
 }
@@ -42,7 +42,7 @@ void Widget::clientConnected()
 {
     QTcpSocket* sockClient = mServer->nextPendingConnection();
     mClients << sockClient;
-    connect(sockClient,SIGNAL(readyRead()),this,SLOT(dataIsComing()));
+    connect(sockClient,SIGNAL(readyRead()),this,SLOT(colisArrive()));
     connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));    
 }
 
@@ -53,20 +53,20 @@ void Widget::clientDisconnected()
     sock->deleteLater();
 }
 
-void Widget::dataIsComing()
+void Widget::colisArrive()
 {
+    //Lecture des données transférées par le client
     QTcpSocket* sock = (QTcpSocket*)sender();
     QByteArray data = sock->readAll();
     Colis c(data);
 
-    //qDebug() << c.toString();
-
+    //Liste des destinations actuelles
     QStringList destinationsCamionsList;
     bool succesAjoutColis=false;
-
     for(int i=0; i<mListCamions.size(); i++)
         destinationsCamionsList.append(mListCamions[i]->getPays());
 
+    //Création du camion - Ajout du colis
     if(!destinationsCamionsList.contains(c.getPays()))
     {
         Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
@@ -80,7 +80,9 @@ void Widget::dataIsComing()
             miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
         }
         mListCamions.append(ptrCamion);
-    }else{
+    }
+    else
+    {
         for(int i=0; i<mListCamions.size(); i++)
         {
             if(mListCamions[i]->getPays() == c.getPays())
@@ -141,12 +143,13 @@ void Widget::dataIsComing()
 
 void Widget::envoiCamion(Camion* ptrCamion)
 {
+    //Création du dossier bordereauxTransport
     if(!QDir("../serveurLivraison/bordereauxTransport").exists())
         QDir().mkdir("../serveurLivraison/bordereauxTransport");
 
+    //Génération du bordereau de transport au format .txt
     QString filename = "../serveurLivraison/bordereauxTransport/" + ptrCamion->getID();
     QFile file(filename + ".txt");
-
     if(!file.open(QFile::WriteOnly |
                       QFile::Text))
     {
@@ -250,7 +253,7 @@ void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
         ui->tableWidgetAllemagne->setCellWidget(nbRows, 1, new QLabel(c.getType()));
         ui->tableWidgetAllemagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
         ui->lineEditPoidsCamionAllemagne->setText(QString::number(poids, 'f', 1) + " kg");
-        ui->lineEditVolumeCamionAllemagne->setText(QString::number(volume, 'f', 1) + " m³");
+        ui->lineEditVolumeCamionAllemagne->setText(QString::number(volume, 'f', 2) + " m³");
     } else if(pays=="Espagne"){
         int nbRows = ui->tableWidgetEspagne->rowCount();
         ui->tableWidgetEspagne->setRowCount(nbRows+1);
@@ -258,7 +261,7 @@ void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
         ui->tableWidgetEspagne->setCellWidget(nbRows, 1, new QLabel(c.getType()));
         ui->tableWidgetEspagne->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
         ui->lineEditPoidsCamionEspagne->setText(QString::number(poids, 'f', 1) + " kg");
-        ui->lineEditVolumeCamionEspagne->setText(QString::number(volume, 'f', 1) + " m³");
+        ui->lineEditVolumeCamionEspagne->setText(QString::number(volume, 'f', 2) + " m³");
     } else {
         int nbRows = ui->tableWidgetFrance->rowCount();
         ui->tableWidgetFrance->setRowCount(nbRows+1);
@@ -266,7 +269,7 @@ void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
         ui->tableWidgetFrance->setCellWidget(nbRows, 1, new QLabel(c.getType()));
         ui->tableWidgetFrance->setCellWidget(nbRows, 2, new QLabel(QString::number(c.getPoids(), 'f', 1)));
         ui->lineEditPoidsCamionFrance->setText(QString::number(poids, 'f', 1) + " kg");
-        ui->lineEditVolumeCamionFrance->setText(QString::number(volume, 'f', 1) + " m³");
+        ui->lineEditVolumeCamionFrance->setText(QString::number(volume, 'f', 2) + " m³");
     }
 }
 

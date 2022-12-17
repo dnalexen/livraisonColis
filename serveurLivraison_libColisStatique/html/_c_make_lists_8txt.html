@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>serveurLivraison_libColisStatique: Référence du fichier CMakeLists.txt</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">serveurLivraison_libColisStatique
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_c_make_lists_8txt.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier CMakeLists.txt</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a26aaa3066c3159a267dfd18ef14e9f7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#a26aaa3066c3159a267dfd18ef14e9f7a">cmake_minimum_required</a> (VERSION 3.5) project(serveurLivraison_libColisStatique VERSION 0.1 LANGUAGES CXX) set(CMAKE_AUTOUIC ON) set(CMAKE_AUTOMOC ON) set(CMAKE_AUTORCC ON) set(CMAKE_CXX_STANDARD 17) set(CMAKE_CXX_STANDARD_REQUIRED ON) include_directories(&quot;/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/ColisStatique&quot;) link_directories(&quot;/home/dnalexen/Documents/AJC_THALES/cours/11-PROJET C++/livraisonColis/build-ColisStatique-Desktop_Qt_6_4_1_GCC_64bit-Debug&quot;) find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets) <a class="el" href="_c_make_lists_8txt.html#afa099e4bcbde834bb906acca923785af">find_package</a>(Qt$</td></tr>
+<tr class="separator:a26aaa3066c3159a267dfd18ef14e9f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa099e4bcbde834bb906acca923785af"><td class="memItemLeft" align="right" valign="top">REQUIRED COMPONENTS Widgets&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#afa099e4bcbde834bb906acca923785af">find_package</a> (Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Network) find_package(Qt6 REQUIRED COMPONENTS Sql) set(PROJECT_SOURCES main.cpp widget.cpp widget.h widget.ui camion.h camion.cpp dbmanager.h dbmanager.cpp) if($</td></tr>
+<tr class="separator:afa099e4bcbde834bb906acca923785af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc721180031c4bd17e516770a36f01d9"><td class="memItemLeft" align="right" valign="top">GREATER_EQUAL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#adc721180031c4bd17e516770a36f01d9">qt_add_executable</a> (serveurLivraison_libColisStatique MANUAL_FINALIZATION ${PROJECT_SOURCES}) <a class="el" href="_c_make_lists_8txt.html#a09e25411c8b0f23e0ae340cedd7fffae">else</a>() if(ANDROID) add_library(serveurLivraison_libColisStatique SHARED $</td></tr>
+<tr class="separator:adc721180031c4bd17e516770a36f01d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e25411c8b0f23e0ae340cedd7fffae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#a09e25411c8b0f23e0ae340cedd7fffae">else</a> () add_executable(serveurLivraison_libColisStatique $</td></tr>
+<tr class="separator:a09e25411c8b0f23e0ae340cedd7fffae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca3ec4826b38c195dda3b101d6e9139"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#aaca3ec4826b38c195dda3b101d6e9139">endif</a> () endif() <a class="el" href="_c_make_lists_8txt.html#afa289aebe938d89e918894644a114533">target_link_libraries</a>(serveurLivraison_libColisStatique PRIVATE Qt$</td></tr>
+<tr class="separator:aaca3ec4826b38c195dda3b101d6e9139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2492a241599be7aa0e72981ef438811"><td class="memItemLeft" align="right" valign="top">::Widgets&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#ac2492a241599be7aa0e72981ef438811">target_link_libraries</a> (serveurLivraison_libColisStatique PRIVATE &quot;libColisStatique.a&quot;) target_link_libraries(serveurLivraison_libColisStatique PRIVATE Qt$</td></tr>
+<tr class="separator:ac2492a241599be7aa0e72981ef438811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa289aebe938d89e918894644a114533"><td class="memItemLeft" align="right" valign="top">::Network&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_make_lists_8txt.html#afa289aebe938d89e918894644a114533">target_link_libraries</a> (serveurLivraison_libColisStatique PRIVATE Qt6::Sql) set_target_properties(serveurLivraison_libColisStatique PROPERTIES MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com MACOSX_BUNDLE_BUNDLE_VERSION $</td></tr>
+<tr class="separator:afa289aebe938d89e918894644a114533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a26aaa3066c3159a267dfd18ef14e9f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26aaa3066c3159a267dfd18ef14e9f7a">&#9670;&nbsp;</a></span>cmake_minimum_required()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cmake_minimum_required </td>
+          <td>(</td>
+          <td class="paramtype">VERSION 3.&#160;</td>
+          <td class="paramname"><em>5</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00001">1</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="a09e25411c8b0f23e0ae340cedd7fffae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e25411c8b0f23e0ae340cedd7fffae">&#9670;&nbsp;</a></span>else()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">else </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00047">47</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="aaca3ec4826b38c195dda3b101d6e9139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca3ec4826b38c195dda3b101d6e9139">&#9670;&nbsp;</a></span>endif()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">endif </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00051">51</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="afa099e4bcbde834bb906acca923785af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa099e4bcbde834bb906acca923785af">&#9670;&nbsp;</a></span>find_package()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">REQUIRED COMPONENTS Widgets find_package </td>
+          <td>(</td>
+          <td class="paramtype">Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS&#160;</td>
+          <td class="paramname"><em>Network</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00017">17</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="adc721180031c4bd17e516770a36f01d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc721180031c4bd17e516770a36f01d9">&#9670;&nbsp;</a></span>qt_add_executable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GREATER_EQUAL qt_add_executable </td>
+          <td>(</td>
+          <td class="paramtype">serveurLivraison_libColisStatique MANUAL_FINALIZATION ${PROJECT_SOURCES}&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00032">32</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="ac2492a241599be7aa0e72981ef438811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2492a241599be7aa0e72981ef438811">&#9670;&nbsp;</a></span>target_link_libraries() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">::Widgets target_link_libraries </td>
+          <td>(</td>
+          <td class="paramtype">serveurLivraison_libColisStatique PRIVATE &quot;libColisStatique.a&quot;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00055">55</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+<a id="afa289aebe938d89e918894644a114533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa289aebe938d89e918894644a114533">&#9670;&nbsp;</a></span>target_link_libraries() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">::Network target_link_libraries </td>
+          <td>(</td>
+          <td class="paramtype">serveurLivraison_libColisStatique PRIVATE Qt6::Sql&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_c_make_lists_8txt_source.html#l00057">57</a> du fichier <a class="el" href="_c_make_lists_8txt_source.html">CMakeLists.txt</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_c_make_lists_8txt.html">CMakeLists.txt</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

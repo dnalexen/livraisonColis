@@ -4,36 +4,29 @@
 #define POIDS_MAX 500
 #define VOLUME_MAX 40000
 
-/**
- * @brief Widget::Widget
- * @param parent
- */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    setWindowTitle("serveur");
+    setWindowTitle("Serveur"); //Nommage de la fenêtre serveur
 
-    ui->tableWidgetAllemagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
-    ui->tableWidgetFrance->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
-    ui->tableWidgetEspagne->setHorizontalHeaderLabels(QStringList{"Nom", "Type", "Poids(kg)"});
+    //Entête colonnes tables
+    QStringList listEntetes = {"Nom", "Type", "Poids(kg)"};
+    ui->tableWidgetAllemagne->setHorizontalHeaderLabels(listEntetes);
+    ui->tableWidgetFrance->setHorizontalHeaderLabels(listEntetes);
+    ui->tableWidgetEspagne->setHorizontalHeaderLabels(listEntetes);
 
-    ui->pushButtonAllemagne->setVisible(false);
-    ui->pushButtonEspagne->setVisible(false);
-    ui->pushButtonFrance->setVisible(false);
-
+    //Etablissement du serveur TCP
     mServer = new QTcpServer(this);
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
 
+    //Création des tables tableColis et tableCamion dans la BD Livraison
     mDB->createTable("tableColis");
     mDB->createTable("tableCamion");
 }
 
-/**
- * @brief Widget::~Widget
- */
 Widget::~Widget()
 {
     delete mServer;
@@ -45,24 +38,14 @@ Widget::~Widget()
     delete mDB;
 }
 
-/**
- * @brief Widget::clientConnected
- * Cette méthode gère la connection
- * d'un client au serveur.
- */
 void Widget::clientConnected()
 {
     QTcpSocket* sockClient = mServer->nextPendingConnection();
     mClients << sockClient;
-    connect(sockClient,SIGNAL(readyRead()),this,SLOT(dataIsComing()));
+    connect(sockClient,SIGNAL(readyRead()),this,SLOT(colisArrive()));
     connect(sockClient,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));
 }
 
-/**
- * @brief Widget::clientDisconnected
- * Cette méthode gère la déconnection
- * d'un client du serveur.
- */
 void Widget::clientDisconnected()
 {
     QTcpSocket* sock = (QTcpSocket*)sender();
@@ -70,25 +53,20 @@ void Widget::clientDisconnected()
     sock->deleteLater();
 }
 
-/**
- * @brief Widget::dataIsComing
- * Cette méthode permet de réceptionner un colis
- * et le charger dans un camion.
- */
-void Widget::dataIsComing()
+void Widget::colisArrive()
 {
+    //Lecture des données transférées par le client
     QTcpSocket* sock = (QTcpSocket*)sender();
     QByteArray data = sock->readAll();
     Colis c(data);
 
-    //qDebug() << c.toString();
-
+    //Liste des destinations actuelles
     QStringList destinationsCamionsList;
     bool succesAjoutColis=false;
-
     for(int i=0; i<mListCamions.size(); i++)
         destinationsCamionsList.append(mListCamions[i]->getPays());
 
+    //Création du camion - Ajout du colis
     if(!destinationsCamionsList.contains(c.getPays()))
     {
         Camion* ptrCamion = new Camion(c.getPays(), POIDS_MAX, VOLUME_MAX);
@@ -102,7 +80,9 @@ void Widget::dataIsComing()
             miseAJourFenetre(ptrCamion->getPays(), ptrCamion->getPoids(), ptrCamion->getVolume(), c);
         }
         mListCamions.append(ptrCamion);
-    }else{
+    }
+    else
+    {
         for(int i=0; i<mListCamions.size(); i++)
         {
             if(mListCamions[i]->getPays() == c.getPays())
@@ -159,23 +139,17 @@ void Widget::dataIsComing()
             }
         }
     }
-
 }
 
-/**
- * @brief Widget::envoiCamion
- * Cette méthode permet de générer le bordereau
- * de transport d'un Camion.
- * @param ptrCamion: pointeur d'un Camion
- */
 void Widget::envoiCamion(Camion* ptrCamion)
 {
+    //Création du dossier bordereauxTransport
     if(!QDir("../serveurLivraison_libColisStatique/bordereauxTransport").exists())
         QDir().mkdir("../serveurLivraison_libColisStatique/bordereauxTransport");
 
+    //Génération du bordereau de transport au format .txt
     QString filename = "../serveurLivraison_libColisStatique/bordereauxTransport/" + ptrCamion->getID();
     QFile file(filename + ".txt");
-
     if(!file.open(QFile::WriteOnly |
                       QFile::Text))
     {
@@ -269,15 +243,6 @@ void Widget::envoiCamion(Camion* ptrCamion)
     delete ptrCamion;
 }
 
-/**
- * @brief Widget::miseAJourFenetre
- * Cette méthode met à jour l'interface de
- * chargement des camions.
- * @param pays: pays de destination du camion
- * @param poids: poids du camion
- * @param volume: volume du camion
- * @param c: colis ajouté au camion
- */
 void Widget::miseAJourFenetre(QString pays, float poids, float volume, Colis c)
 {
     if(pays=="Allemagne")

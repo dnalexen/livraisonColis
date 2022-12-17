@@ -1,0 +1,4 @@
+<map id="DbManager::updatePoidsCamion" name="DbManager::updatePoidsCamion">
+<area shape="rect" id="node1" title="Mettre à jour le poids d&#39;un camion." alt="" coords="5,5,240,32"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a9b1f58efa9496b976f51642221246199" title="Vérifie si le camion existe dans la table tableCamion de la base de données Livraison." alt="" coords="288,5,480,32"/>
+</map>

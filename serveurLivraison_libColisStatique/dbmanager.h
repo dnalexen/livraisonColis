@@ -32,6 +32,10 @@ public:
      */
     ~DbManager();
 
+    /**
+     * @brief isOpen - vérifie l'état de la connexion à la BD
+     * @return true - si la connexion à la BD est ouverte, false - si la connexion à la BD est fermée
+     */
     bool isOpen() const;
 
     /**
@@ -112,7 +116,7 @@ public:
     bool updateVolumeCamion(const QString& id, float volume) const;
 
 private:
-    QSqlDatabase m_db;
+    QSqlDatabase m_db; //Connexion à la Base de Données
 };
 
 #endif // DBMANAGER_H

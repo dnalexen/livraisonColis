@@ -1,0 +1,4 @@
+<map id="DbManager::printColis" name="DbManager::printColis">
+<area shape="rect" id="node1" title="Imprime les informations d&#39;un colis." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#ae3406a0926151030f6f4df93352dafe2" title="Vérifie si le colis existe dans la table tableColis de la base de données Livraison." alt="" coords="220,5,395,32"/>
+</map>

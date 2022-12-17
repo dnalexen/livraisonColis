@@ -103,13 +103,13 @@ public:
     QString toString();
 
 protected:
-    QString mID;
-    QList<Colis> mColisList;
-    QString mPays;
-    float mPoids;
-    float mPoidsMax;
-    float mVolume;
-    float mVolumeMax;
+    QString mID; //Id du camion
+    QList<Colis> mColisList; //Liste de colis dans le camion
+    QString mPays; //Pays de destination du camion
+    float mPoids; //Poids du camion en kg
+    float mPoidsMax; //Poids maximum du camion en kg
+    float mVolume; //Volume du camion en m³
+    float mVolumeMax; //Volume maximum du camion en m³
 };
 
 #endif // CAMION_H

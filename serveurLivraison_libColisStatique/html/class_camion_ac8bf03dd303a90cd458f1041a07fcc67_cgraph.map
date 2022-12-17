@@ -1,0 +1,9 @@
+<map id="Camion::toString" name="Camion::toString">
+<area shape="rect" id="node1" title="Camion::toString Cette méthode retourne toutes les informations du camion." alt="" coords="5,132,136,159"/>
+<area shape="rect" id="node2" href="$class_camion.html#ae778d91ae9728634d8a8003a850401f1" title="getID Cette méthode retourne l&#39;ID du camion." alt="" coords="216,5,331,32"/>
+<area shape="rect" id="node3" href="$class_camion.html#a6f1275edadd645ff06b43d4627502c32" title="getPays Cette méthode retourne le pays de destination du camion." alt="" coords="208,56,339,83"/>
+<area shape="rect" id="node4" href="$class_camion.html#af61d14f0ee03265e1a39057f4afe35df" title="getPoids Cette méthode retourne le poids du camion." alt="" coords="205,107,341,133"/>
+<area shape="rect" id="node5" href="$class_camion.html#acbddadaac8619b10f23149ce6681adbc" title="getPoidsMax Cette méthode retourne le poids maximum du camion." alt="" coords="191,157,355,184"/>
+<area shape="rect" id="node6" href="$class_camion.html#ae9935b9b64951cf39f836cc4670e7dc8" title="getVolume Cette méthode retourne le volume du camion." alt="" coords="198,208,349,235"/>
+<area shape="rect" id="node7" href="$class_camion.html#a65d7f88623273a200c08d65ee252d85e" title="getVolumeMax Cette méthode retourne le volume maximum du camion." alt="" coords="184,259,363,285"/>
+</map>

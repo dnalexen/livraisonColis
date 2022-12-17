@@ -1,0 +1,12 @@
+<map id="DbManager::addColis" name="DbManager::addColis">
+<area shape="rect" id="node1" title="Ajoute un colis à la table tableColis de la base de données Livraison." alt="" coords="5,208,167,235"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#ae3406a0926151030f6f4df93352dafe2" title="Vérifie si le colis existe dans la table tableColis de la base de données Livraison." alt="" coords="215,5,389,32"/>
+<area shape="rect" id="node3" href="$class_colis.html#aa120955475c05867313e44771987e6f0" title="getHauteur Cette méthode retourne la hauteur du colis." alt="" coords="235,56,369,83"/>
+<area shape="rect" id="node4" href="$class_colis.html#a2beb6c2631afca5850475eeef8c84029" title="getID Cette méthode retourne l&#39;ID du colis." alt="" coords="253,107,351,133"/>
+<area shape="rect" id="node5" href="$class_colis.html#ad87f840334d430d4f174758cb9dbb807" title="getLargeur Cette méthode retourne la largeur du colis." alt="" coords="236,157,368,184"/>
+<area shape="rect" id="node6" href="$class_colis.html#a54e41caa48937c74bd9a5089bc76bea8" title="getLongueur Cette méthode retourne la longueur du colis." alt="" coords="231,208,373,235"/>
+<area shape="rect" id="node7" href="$class_colis.html#afbd321afea62a7fd0f85ef259083ecd6" title="getNom Cette méthode retourne le nom du destinataire du colis." alt="" coords="245,259,359,285"/>
+<area shape="rect" id="node8" href="$class_colis.html#a16042dec5f9516b5e115ee4113df5978" title="getPays Cette méthode retourne le pays de destination du colis." alt="" coords="245,309,359,336"/>
+<area shape="rect" id="node9" href="$class_colis.html#aba17a744324955b1855a8fa711ed49fe" title="getPoids Cette méthode retourne le poids du colis." alt="" coords="243,360,361,387"/>
+<area shape="rect" id="node10" href="$class_colis.html#a84ea82729c12ca20c474c2c4357d444a" title="getType Cette méthode retourne le type d&#39;emballage du colis." alt="" coords="245,411,359,437"/>
+</map>

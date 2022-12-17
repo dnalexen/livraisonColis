@@ -1,0 +1,26 @@
+var class_colis =
+[
+    [ "Colis", "class_colis.html#ac14cc708e05a172da41033c0a8750008", null ],
+    [ "Colis", "class_colis.html#ac76477f76d580a8140e40cbf85f4e975", null ],
+    [ "~Colis", "class_colis.html#a9db2d27387e8debdc25d535fbec180da", null ],
+    [ "getHauteur", "class_colis.html#aa120955475c05867313e44771987e6f0", null ],
+    [ "getID", "class_colis.html#a2beb6c2631afca5850475eeef8c84029", null ],
+    [ "getLargeur", "class_colis.html#ad87f840334d430d4f174758cb9dbb807", null ],
+    [ "getLongueur", "class_colis.html#a54e41caa48937c74bd9a5089bc76bea8", null ],
+    [ "getNom", "class_colis.html#afbd321afea62a7fd0f85ef259083ecd6", null ],
+    [ "getPays", "class_colis.html#a16042dec5f9516b5e115ee4113df5978", null ],
+    [ "getPoids", "class_colis.html#aba17a744324955b1855a8fa711ed49fe", null ],
+    [ "getType", "class_colis.html#a84ea82729c12ca20c474c2c4357d444a", null ],
+    [ "operator$", "class_colis.html#a7b42105ddb19a0267c5580d1a380ba1b", null ],
+    [ "operator%", "class_colis.html#ad7f047c356794e33410adb9f7d3cf9fd", null ],
+    [ "toJson", "class_colis.html#aa8307eac0a8bbbd306d820bcf52c5807", null ],
+    [ "toString", "class_colis.html#a4566f6c4b2ee6c3b514e378aec2d0cd8", null ],
+    [ "mHauteur", "class_colis.html#a2f1fc411ad47aebf520c044ab7fe26a3", null ],
+    [ "mID", "class_colis.html#ac1aecec684c2421170064314ab5b5d4f", null ],
+    [ "mLargeur", "class_colis.html#ace62f355c437d8f79c16bbfad3eb9136", null ],
+    [ "mLongueur", "class_colis.html#acf4cc925d1f50d481c04194c3e6fbda9", null ],
+    [ "mNom", "class_colis.html#a4b067e6cda2131d908315c5684918419", null ],
+    [ "mPays", "class_colis.html#a380d66e468b4f96c95b812334489707c", null ],
+    [ "mPoids", "class_colis.html#a2ee419a9bf9a97a0482cdcaaac91fb64", null ],
+    [ "mType", "class_colis.html#a100eb8d8abc96c3e679a4c1c4f776f8a", null ]
+];

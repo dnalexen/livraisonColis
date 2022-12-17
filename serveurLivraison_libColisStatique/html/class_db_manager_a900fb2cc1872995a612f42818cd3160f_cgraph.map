@@ -1,0 +1,10 @@
+<map id="DbManager::addCamion" name="DbManager::addCamion">
+<area shape="rect" id="node1" title="Ajoute un camion à la table tableCamion de la base de données Livraison." alt="" coords="5,157,184,184"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a9b1f58efa9496b976f51642221246199" title="Vérifie si le camion existe dans la table tableCamion de la base de données Livraison." alt="" coords="232,5,424,32"/>
+<area shape="rect" id="node3" href="$class_camion.html#ae778d91ae9728634d8a8003a850401f1" title="getID Cette méthode retourne l&#39;ID du camion." alt="" coords="271,56,385,83"/>
+<area shape="rect" id="node4" href="$class_camion.html#a6f1275edadd645ff06b43d4627502c32" title="getPays Cette méthode retourne le pays de destination du camion." alt="" coords="263,107,393,133"/>
+<area shape="rect" id="node5" href="$class_camion.html#af61d14f0ee03265e1a39057f4afe35df" title="getPoids Cette méthode retourne le poids du camion." alt="" coords="260,157,396,184"/>
+<area shape="rect" id="node6" href="$class_camion.html#acbddadaac8619b10f23149ce6681adbc" title="getPoidsMax Cette méthode retourne le poids maximum du camion." alt="" coords="246,208,410,235"/>
+<area shape="rect" id="node7" href="$class_camion.html#ae9935b9b64951cf39f836cc4670e7dc8" title="getVolume Cette méthode retourne le volume du camion." alt="" coords="253,259,403,285"/>
+<area shape="rect" id="node8" href="$class_camion.html#a65d7f88623273a200c08d65ee252d85e" title="getVolumeMax Cette méthode retourne le volume maximum du camion." alt="" coords="239,309,417,336"/>
+</map>

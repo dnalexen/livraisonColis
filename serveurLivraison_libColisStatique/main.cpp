@@ -21,7 +21,7 @@
  * @brief main
  * @param argc
  * @param argv
- * @return
+ * @return int
  */
 int main(int argc, char *argv[])
 {

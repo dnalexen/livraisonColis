@@ -1,0 +1,7 @@
+<map id="Camion::addColis" name="Camion::addColis">
+<area shape="rect" id="node1" title="Camion::addColis Cette méthode permet de charger un colis dans le camion." alt="" coords="5,81,141,108"/>
+<area shape="rect" id="node2" href="$class_colis.html#aa120955475c05867313e44771987e6f0" title="getHauteur Cette méthode retourne la hauteur du colis." alt="" coords="193,5,328,32"/>
+<area shape="rect" id="node3" href="$class_colis.html#ad87f840334d430d4f174758cb9dbb807" title="getLargeur Cette méthode retourne la largeur du colis." alt="" coords="195,56,327,83"/>
+<area shape="rect" id="node4" href="$class_colis.html#a54e41caa48937c74bd9a5089bc76bea8" title="getLongueur Cette méthode retourne la longueur du colis." alt="" coords="189,107,332,133"/>
+<area shape="rect" id="node5" href="$class_colis.html#aba17a744324955b1855a8fa711ed49fe" title="getPoids Cette méthode retourne le poids du colis." alt="" coords="201,157,320,184"/>
+</map>

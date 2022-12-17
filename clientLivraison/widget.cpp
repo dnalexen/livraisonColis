@@ -15,16 +15,13 @@ float hauteurGrand;
 float largeurGrand;
 float longueurGrand;
 
-/**
- * @brief Widget::Widget
- * @param parent
- */
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
 
+    //Lecture des dimensions des colis
     QSettings settings("../clientLivraison/settings.ini", QSettings::IniFormat);
 
     hauteurPetit = settings.value("Petit/Hauteur", "settings").toFloat();
@@ -39,33 +36,28 @@ Widget::Widget(QWidget *parent)
     largeurGrand = settings.value("Grand/Largeur", "settings").toFloat();
     longueurGrand = settings.value("Grand/Longueur", "settings").toFloat();
 
-    setWindowTitle("client");
+    setWindowTitle("Client"); //Nommage de la fenêtre client
+
+    //Connexion du client au serveur
     mSock = new QTcpSocket(this);
     mSock->connectToHost("127.0.0.1",9090);
 
+    //Remplissage des combobox
     ui->comboBoxType->addItems(QStringList {"Petit", "Moyen", "Grand"});
-
     ui->comboBoxPays->addItems(QStringList {"Allemagne", "Espagne", "France"});
 
+    //Déclenchement des méthodes SLOT en fonction du SIGNAL
     connect(mSock, SIGNAL(connected()), this, SLOT(Connected()));
     connect(mSock, SIGNAL(Disconnected()), this, SLOT(Disconnected()));
     connect(ui->pushButtonEnvoyer, SIGNAL(clicked(bool)), this, SLOT(envoisColis()));
 }
 
-/**
- * @brief Widget::~Widget
- */
 Widget::~Widget()
 {
     delete mSock;
     delete ui;
 }
 
-/**
- * @brief Widget::envoisColis
- * Cette méthode permet d'envoyer un colis
- * au serveur.
- */
 void Widget::envoisColis()
 {
     float hauteur, largeur, longueur, volume;
@@ -99,26 +91,16 @@ void Widget::envoisColis()
     ui->lineEditLargeur->setText(QString::number(largeur) + " m");
     ui->lineEditLongueur->setText(QString::number(longueur) + " m");
     ui->lineEditPoids->setText(QString::number(poids, 'f', 1) + " kg");
-    ui->lineEditVolume->setText(QString::number(volume, 'f', 1) + " m³");
+    ui->lineEditVolume->setText(QString::number(volume, 'f', 2) + " m³");
 
-    mSock->write(monColis.toJson());
+    mSock->write(monColis.toJson()); //Envoi des données du colis au serveur
 }
 
-/**
- * @brief Widget::Connected
- * Cette méthode permet d'activer le bouton
- * Envoyer lorsque le client est connecté.
- */
 void Widget::Connected()
 {
     ui->pushButtonEnvoyer->setEnabled(true);
 }
 
-/**
- * @brief Widget::Disconnected
- * Cette méthode permet de désactiver le bouton
- * Envoyer lorsque le client est déconnecté.
- */
 void Widget::Disconnected()
 {
     ui->pushButtonEnvoyer->setEnabled(false);    

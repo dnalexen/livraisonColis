@@ -1,0 +1,6 @@
+<map id="DbManager::colisExists" name="DbManager::colisExists">
+<area shape="rect" id="node1" title="Vérifie si le colis existe dans la table tableColis de la base de données Livraison." alt="" coords="240,56,415,83"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#abc9abeb8762994249e108876a98f0c53" title="Ajoute un colis à la table tableColis de la base de données Livraison." alt="" coords="18,5,179,32"/>
+<area shape="rect" id="node3" href="$class_db_manager.html#a3959f0f66eb1bed21bce3ed3a19c5b7d" title="Imprime les informations d&#39;un colis." alt="" coords="15,56,182,83"/>
+<area shape="rect" id="node4" href="$class_db_manager.html#a811990a3a9756a1c84a9372fa9732009" title="Supprime un colis de la table tableColis de la base de données Livraison." alt="" coords="5,107,192,133"/>
+</map>

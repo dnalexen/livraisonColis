@@ -21,7 +21,7 @@ QT_END_NAMESPACE
 
 /**
  * @class Widget
- * @brief La classe Widget
+ * @brief Widget affiche la fenêtre du serveur
  */
 class Widget : public QWidget
 {
@@ -55,11 +55,11 @@ private slots:
     void clientDisconnected();
 
     /**
-     * @brief dataIsComing
+     * @brief colisArrive
      * Cette méthode permet de réceptionner un colis
      * et le charger dans un camion.
      */
-    void dataIsComing();
+    void colisArrive();
 
     /**
      * @brief envoiCamion
@@ -67,7 +67,7 @@ private slots:
      * de transport d'un Camion.
      * @param ptrCamion: pointeur d'un Camion
      */
-    void envoiCamion(Camion*);
+    void envoiCamion(Camion* ptrCamion);
 
     /**
      * @brief miseAJourFenetre
@@ -78,12 +78,12 @@ private slots:
      * @param volume: volume du camion
      * @param c: colis ajouté au camion
      */
-    void miseAJourFenetre(QString, float, float, Colis);
+    void miseAJourFenetre(QString pays, float poids, float volume, Colis c);
 private:
-    Ui::Widget *ui;
-    QTcpServer* mServer;
-    QList<QTcpSocket*> mClients;
-    QList<Camion*> mListCamions;
-    DbManager* mDB = new DbManager();
+    Ui::Widget *ui; //Pointeur d'un objet de la classe Widget
+    QTcpServer* mServer; //Pointeur du serveur TCP
+    QList<QTcpSocket*> mClients; //Liste de clients connectés au serveur TCP
+    QList<Camion*> mListCamions; //Liste de camions
+    DbManager* mDB = new DbManager(); //Connexion à la Base de Données Livraison
 };
 #endif // WIDGET_H

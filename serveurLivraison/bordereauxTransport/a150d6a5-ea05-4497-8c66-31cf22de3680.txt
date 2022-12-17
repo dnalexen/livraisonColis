@@ -1,0 +1,25 @@
+Bordereau de transport
+
+Information du camion:
+ID:a150d6a5-ea05-4497-8c66-31cf22de3680;Pays:Espagne;Poids:494.2;Poids max:500;Volume:31.706;Volume max:40000;Nombre de colis:19
+
+Information des colis:
+1- ID:3f6fbf74-1cdb-4081-9be0-07477ce35c5f;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:35.9
+2- ID:b73ea01f-e180-438a-ab7d-be4be4674f15;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:47.2
+3- ID:89484371-c232-4915-a02c-669131f038f7;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:17.9
+4- ID:efc987d3-f965-4ff4-b348-ac09f558e1a7;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:45.6
+5- ID:4f78130e-f0a4-4981-b015-6c6013d90ecf;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:33.6
+6- ID:144fc7d7-af57-49a8-b90d-c537cc47f454;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:28.2
+7- ID:5a70870e-7423-4ead-9673-247bab4e7d57;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:13.4
+8- ID:79f933ca-8cb3-4639-956e-9bcc3178f18a;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:3.7
+9- ID:32198b81-e5b9-4c73-b40b-c91828d3b5e4;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:26.3
+10- ID:d1650ff0-45f0-4f40-91f2-685d72c5b859;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:39.4
+11- ID:6703feb0-9be0-4774-805a-8bec061cad47;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:1.3
+12- ID:14acdd84-27e2-40d4-8381-82f1bc303139;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:46.5
+13- ID:8175466e-2c98-4b98-ab49-e7a5c9199031;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:4.6
+14- ID:2eb2b4fa-910c-420e-9be0-aa29e05bc163;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:1.6
+15- ID:27836c7b-8271-448e-a9b2-a6667cfc298a;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:39
+16- ID:eff0e0ab-908d-40f7-b33b-7341a711453a;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:30.5
+17- ID:5efd6bb6-3c53-499b-acb9-d3b2140a70e6;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:18.8
+18- ID:2bf34ae1-e907-4db9-840a-446cca4db0bc;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:12.3
+19- ID:75b6ffd9-b35b-492d-bda8-c7d8c80734fc;Nom:Serena;Pays:Espagne;Type:Grand;Hauteur:1;Largeur:1.2;Longueur:1.5;Poids:48.4

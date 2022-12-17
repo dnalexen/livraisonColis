@@ -1,0 +1,4 @@
+<map id="DbManager::updateVolumeCamion" name="DbManager::updateVolumeCamion">
+<area shape="rect" id="node1" title="Mettre à jour le volume d&#39;un camion." alt="" coords="5,5,255,32"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a9b1f58efa9496b976f51642221246199" title="Vérifie si le camion existe dans la table tableCamion de la base de données Livraison." alt="" coords="303,5,495,32"/>
+</map>

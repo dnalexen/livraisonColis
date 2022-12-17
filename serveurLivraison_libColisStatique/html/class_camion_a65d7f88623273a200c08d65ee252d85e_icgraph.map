@@ -1,0 +1,5 @@
+<map id="Camion::getVolumeMax" name="Camion::getVolumeMax">
+<area shape="rect" id="node1" title="getVolumeMax Cette méthode retourne le volume maximum du camion." alt="" coords="232,31,411,57"/>
+<area shape="rect" id="node2" href="$class_db_manager.html#a900fb2cc1872995a612f42818cd3160f" title="Ajoute un camion à la table tableCamion de la base de données Livraison." alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node3" href="$class_camion.html#ac8bf03dd303a90cd458f1041a07fcc67" title="Camion::toString Cette méthode retourne toutes les informations du camion." alt="" coords="29,56,160,83"/>
+</map>
