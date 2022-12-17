@@ -19,7 +19,7 @@ Les projets "serveurLivraison" et "clientLivraison" fonctionnent ensemble. Il fa
 
 Les projets "serveurLivraison_libColisStatique" et "clientLivraison_libColisStatique" fonctionnent ensemble; ils utilisent la bibliothèque statique "libColisStatique.a" qui est construite après compilation du projet "ColisStatique". Il faut exécuter "serveurLivraison_libColisStatique" en premier afin de démarrer le serveur.
 
-La documentation Doxygen pour chaque projet est consultable:
+La documentation Doxygen de chaque projet est consultable:
 - [clientLivraison](./clientLivraison/html/index.html)
 - [serveurLivraison](./serveurLivraison/html/index.html)
 - [clientLivraison_libColisStatique](./clientLivraison_libColisStatique/html/index.html)
