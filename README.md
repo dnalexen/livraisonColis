@@ -9,11 +9,11 @@ Les codes peuvent être compilés avec les fichiers CMakeLists.txt avec cmake_mi
 Ce programme permet d'envoyer des colis depuis la partie client vers la partie serveur.
 Le serveur réceptionne un colis et le charge dans un camion en fonction de sa destination.
 
-![exemple UI client](./UI_client.png)
 L'interface utilisateur de la partie client affiche les informations du colis à envoyer.
+![exemple UI client](./UI_client.png)
 
-![exemple UI serveur](./UI_serveur.png)
 L'interface utilisateur de la partie serveur affiche la liste des colis chargés dans chaque camion.
+![exemple UI serveur](./UI_serveur.png)
 
 Les projets "serveurLivraison" et "clientLivraison" fonctionnent ensemble. Il faut exécuter "serveurLivraison" en premier afin de démarrer le serveur.
 
