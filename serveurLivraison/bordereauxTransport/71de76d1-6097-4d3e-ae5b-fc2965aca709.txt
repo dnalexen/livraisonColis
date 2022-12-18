@@ -1,0 +1,25 @@
+Bordereau de transport
+
+Information du camion:
+ID:71de76d1-6097-4d3e-ae5b-fc2965aca709;Pays:Allemagne;Poids:475.9;Poids max:500;Volume:6.65;Volume max:40000;Nombre de colis:19
+
+Information des colis:
+1- ID:60cc8079-0042-4bd5-9b55-4dfa6c6fa575;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:20
+2- ID:5172038c-87b7-402b-9097-c1770273db9e;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:10.9
+3- ID:0217040f-fe5e-40a3-89c4-12ee1d0d787f;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:18.2
+4- ID:715fc0c9-31ad-4b08-9c26-af4caa6b0019;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:38.6
+5- ID:1ae6be57-080e-47f0-aead-57a598427d36;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:27.7
+6- ID:9f2afc9e-3543-4466-9892-8224d8b5fd8e;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:30.8
+7- ID:6ab5c9db-2058-4710-a298-bb281c6c53cc;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:20.2
+8- ID:391d794c-7f39-418a-a592-8973d6b0e60d;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:39.7
+9- ID:de839f5a-216c-44ee-99dd-1b604026252f;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:7.8
+10- ID:f2854577-b02a-4e30-a8e1-14cd61adb125;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:44.7
+11- ID:a5e77cee-4dec-4caa-aa3b-ca7eb569ad4d;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:1.3
+12- ID:b4f1a052-26d8-4703-ad12-1e8b2d38bab6;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:30.4
+13- ID:29fb4059-6436-476d-9944-ce51da3a4a7c;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:19.8
+14- ID:ad09522d-20f9-4541-b8a7-8ffdf4ddaac2;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:22.2
+15- ID:46a105ff-0fd0-455d-84d0-90bbe4105724;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:11.3
+16- ID:c6fe06db-27fb-4eae-ade9-6f323cf59f43;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:16.4
+17- ID:dafc769b-a5a3-4559-a95c-33525beed558;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:25.4
+18- ID:d4821476-50b3-4868-b30c-7e285f14c21e;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:41.7
+19- ID:4848bc89-52cb-4532-8e50-ae472d75b84e;Nom:Elena;Pays:Allemagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:48.8
