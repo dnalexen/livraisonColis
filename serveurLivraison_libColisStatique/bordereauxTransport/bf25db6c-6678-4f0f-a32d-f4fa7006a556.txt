@@ -1,0 +1,29 @@
+Bordereau de transport
+
+Information du camion:
+ID:bf25db6c-6678-4f0f-a32d-f4fa7006a556;Pays:Espagne;Poids:499.1;Poids max:500;Volume:16.17;Volume max:40000;Nombre de colis:23
+
+Information des colis:
+1- ID:84224a39-4794-4e2a-adec-60a8cb96be26;Nom:Petra;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:12.7
+2- ID:09605faa-793b-424d-8b5f-0946891d08fb;Nom:Petra;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:23.5
+3- ID:04fe1a0c-7b61-4b4b-b24b-01a3bafc126c;Nom:Petra;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:1.4
+4- ID:2a541fe5-5be7-45c1-9094-a33239f12c1f;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:34.4
+5- ID:7a8ce5b8-2126-43c5-b9ca-95ac43983730;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:45.6
+6- ID:216cd447-5b2a-4e71-bcb2-6a613e443daf;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:21
+7- ID:db69cacc-2a18-4590-b0a7-624fb8ca5e6d;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:8
+8- ID:f74ac6ca-2d3e-4807-ac4f-dd55f6d05d60;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:27.4
+9- ID:30885a7b-2fd2-4bc7-b3cf-d9c0ba5f0a63;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:19.4
+10- ID:591c2102-b7c7-4563-8680-bf12506b05ef;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:16.3
+11- ID:d9df0ecc-b692-44e8-a46a-a9572d82acf0;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:4.5
+12- ID:66c10c59-1f69-43f3-9a33-1e41bfb67209;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:26.4
+13- ID:2729d698-1895-4971-a3e7-9068b419b1c6;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:36.3
+14- ID:d7f03212-b18c-4e5e-b394-fa87b9cd007d;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:0.7
+15- ID:0f0d24dd-2c47-4b8e-b370-0b0ba11cc959;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:11.4
+16- ID:6bf0927f-924d-4b62-b9bd-03f48ce4bfcb;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:14.9
+17- ID:c817470b-06a9-4f2b-983c-7cd6bbb0a1b6;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:26.2
+18- ID:f3da6f93-4f85-41cc-b3f7-d3949638b735;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:16.6
+19- ID:d47792e8-6f87-4ef0-8852-4d948a0700a9;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:36.1
+20- ID:004fa947-1405-4f79-be60-fc44fe02d31d;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:3.2
+21- ID:ee0d1b1c-1f7f-4c3a-827c-ff083d52f51a;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:29.1
+22- ID:c6396980-3efc-4c5d-a148-4123b7181709;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:39.5
+23- ID:c8941740-0f47-4e27-a296-b6ff17eda428;Nom:Petra;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:44.5

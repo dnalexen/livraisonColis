@@ -22,9 +22,9 @@ Widget::Widget(QWidget *parent)
     connect(mServer,SIGNAL(newConnection()),this,SLOT(clientConnected()));
     mServer->listen(QHostAddress::Any,9090);
 
-    //Création des tables tableColis et tableCamion dans la BD Livraison
-    mDB->createTable("tableColis");
+    //Création des tables tableCamion et tableColis dans la BD Livraison
     mDB->createTable("tableCamion");
+    mDB->createTable("tableColis");
 }
 
 Widget::~Widget()

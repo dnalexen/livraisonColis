@@ -16,6 +16,8 @@ DbManager::DbManager()
     else
     {
         qDebug() << "Base de Données: connexion ok";
+        QSqlQuery query(m_db);
+        query.exec("PRAGMA foreign_keys = ON;");
     }
 }
 
@@ -39,9 +41,13 @@ bool DbManager::createTable(QString tableName)
     QSqlQuery query;
     QString queryString;
     if (tableName == "tableColis")
-        queryString = QString("CREATE TABLE %1 (IdColis TEXT PRIMARY KEY, IdCamion TEXT, Nom TEXT, Pays TEXT, Type TEXT, Hauteur FLOAT, Largeur FLOAT, Longueur FLOAT, Poids FLOAT);").arg(tableName);
+        queryString = QString("CREATE TABLE %1 (IdColis TEXT PRIMARY KEY, IdCamion TEXT NOT NULL, "
+                              "Nom TEXT, Pays TEXT, Type TEXT, Hauteur FLOAT, Largeur FLOAT, "
+                              "Longueur FLOAT, Poids FLOAT, "
+                              "FOREIGN KEY (IdCamion) REFERENCES tableCamion(Id));").arg(tableName);
     if (tableName == "tableCamion")
-        queryString = QString("CREATE TABLE %1 (Id TEXT PRIMARY KEY, Pays TEXT, Poids FLOAT, Poids_max FLOAT, Volume FLOAT, Volume_max FLOAT);").arg(tableName);
+        queryString = QString("CREATE TABLE %1 (Id TEXT PRIMARY KEY, Pays TEXT, Poids FLOAT, "
+                              "Poids_max FLOAT, Volume FLOAT, Volume_max FLOAT);").arg(tableName);
     query.prepare(queryString);
 
     if (!query.exec())

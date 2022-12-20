@@ -1,0 +1,25 @@
+Bordereau de transport
+
+Information du camion:
+ID:2b92ad00-2dce-43d8-8edd-c86433032393;Pays:Espagne;Poids:459.5;Poids max:500;Volume:11.928;Volume max:40000;Nombre de colis:19
+
+Information des colis:
+1- ID:b5549bbc-94ac-4891-b32b-fcfd3ce6b255;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:48.8
+2- ID:d59412b9-ca33-4904-a39c-b8e1d2867645;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:19.7
+3- ID:95f808f0-4903-4972-8d5a-3ebd00c7f78d;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:10
+4- ID:895ea925-1ac9-474f-aec5-3cc2cc5bf220;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:35.7
+5- ID:747a121a-6e9b-4876-ae5b-f2ba924aa23e;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:34.3
+6- ID:c46ed204-517d-433c-a95d-3667a25e820e;Nom:Serena;Pays:Espagne;Type:Petit;Hauteur:0.5;Largeur:0.7;Longueur:1;Poids:5.2
+7- ID:0937f11e-65c6-4475-bcc9-796c832812c9;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:21.8
+8- ID:00c7f50a-00da-4d80-9daa-347022637639;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:45.6
+9- ID:ab29eaa0-8dcb-42f1-924f-7a243ce49006;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:41.8
+10- ID:16303d76-e79c-47e2-addc-66f502120436;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:6.4
+11- ID:5123a43a-ad23-4b88-8e42-7843680d14ef;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:4.8
+12- ID:4adb835c-b377-4f59-9e66-e3a0bccbf264;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:43.6
+13- ID:dc634a85-e5f7-47c7-aad6-b7c08cbe2be1;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:16.9
+14- ID:e3a57055-4c0c-4487-b388-4e471de6d9fb;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:19.6
+15- ID:2416fb4e-9506-4c86-9a97-2854d5fad581;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:45.2
+16- ID:666d47ff-2455-4624-a4dc-4675252491be;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:27.2
+17- ID:6a4a28e8-05f9-4844-bf56-f58b4b451ac6;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:3.6
+18- ID:9bf151af-221c-433a-81a7-af64c545d556;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:11.9
+19- ID:8aca0176-a078-4525-b781-72cdee136160;Nom:Serena;Pays:Espagne;Type:Moyen;Hauteur:0.7;Largeur:0.9;Longueur:1.2;Poids:17.4
